@@ -7,11 +7,12 @@ const Hero = () => {
   className="relative bg-gradient-to-r from-blue-600/80 to-purple-700/80 text-white pt-24 pb-16 bg-cover bg-center"
   style={{ backgroundImage: `url(${Hero1})` }}
 >
-  <div className="container mx-auto px-4 py-30 text-center relative z-10">
+ <div className="container mx-auto pl-4 md:pl-20 py-30 text-left relative z-10">
+
     <h1 className="text-4xl md:text-5xl font-bold mb-4">CREATING BEAUTIFUL SMILES</h1>
 
    
-    <p className="text-xl mb-8 max-w-2xl mx-auto">
+    <p className="text-xl mb-8 max-w-2xl ">
       Book your hygiene appointment with our lovely 
 and experienced hygienenist for a pearly white smile  
     </p>

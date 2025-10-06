@@ -1,21 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo.png' // Ensure you have a logo image in the specified path
+import { Menu, X } from 'lucide-react'
+import logo from '../assets/logo.png'
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
   return (
-<header className="bg-white shadow-md fixed w-11/12 top-6 left-1/2 transform -translate-x-1/2 z-50 rounded-4xl py-0 px-4">
-
-
-
-
-
+    <header className="bg-white shadow-md fixed w-11/12 top-6 left-1/2 transform -translate-x-1/2 z-50 rounded-4xl py-0 px-4">
       <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <img src= {logo} alt="Pantiles Dental Logo" className="h-12 mr-4" />
-        
+          <img src={logo} alt="Pantiles Dental Logo" className="h-10 md:h-12" />
         </div>
-        <ul className="flex space-x-6">
+
+        {/* Desktop Navigation */}
+        <ul className="hidden lg:flex space-x-6">
           <li>
             <Link to="/" className="text-gray-700 hover:text-blue-800 font-medium transition duration-300">
               Home
@@ -47,10 +54,88 @@ const Header = () => {
             </Link>
           </li>
         </ul>
-        <button className="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+
+        {/* Desktop Book Now Button */}
+        <button className="hidden lg:block bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
           Book Now
         </button>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={toggleMenu}
+          className="lg:hidden text-gray-700 hover:text-blue-800 transition duration-300"
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </nav>
+
+      {/* Mobile Navigation Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200">
+          <ul className="flex flex-col space-y-2 px-4 py-4">
+            <li>
+              <Link
+                to="/"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
+              >
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/fees"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
+              >
+                Fees
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/special-offers"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
+              >
+                Special Offers
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
+              >
+                Contact Us
+              </Link>
+            </li>
+            <li className="pt-2">
+              <button className="w-full bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+                Book Now
+              </button>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   )
 }
