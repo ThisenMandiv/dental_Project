@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 import logo from '../assets/logo.png'; // Ensure this path points to your actual logo image
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Fees', href: '#fees' },
-  { label: 'Special Offers', href: '#offers' },
-  { label: 'Contact Us', href: '#contact' },
+  { label: 'Home', href: '/home' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Fees', href: '/fees' },
+  { label: 'Special Offers', href: '/offers' },
+  { label: 'Contact Us', href: '/contact' },
 ];
 
 export default function Header() {

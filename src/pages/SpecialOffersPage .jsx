@@ -1,0 +1,138 @@
+import React from 'react';
+import { Phone, Mail, MapPin } from 'lucide-react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { Link } from 'react-router-dom'
+import offer from '../assets/offerbg.jpg';
+
+
+const SpecialOffersPage = () => {
+  const offers = [
+    {
+      title: "Invisalign",
+      subtitle: "free consultation",
+      icon: "🦷",
+      image: "/path-to-assets/invisalign.jpg"
+    },
+    {
+      title: "Facial Aesthetics",
+      subtitle: "Complimentary consultation",
+      icon: "💉",
+      image: "/path-to-assets/facial.jpg"
+    },
+    {
+      title: "consultation fee",
+      subtitle: "Implant/ologist consultation fee is now £90",
+      icon: "🔍",
+      image: "/path-to-assets/implant.jpg"
+    },
+    {
+      title: "New patient",
+      subtitle: "New patient offer only £75",
+      icon: "🦷",
+      image: "/path-to-assets/new-patient.jpg"
+    },
+    {
+      title: "Free Denplan",
+      subtitle: "Free Denplan Assessment",
+      icon: "🦷",
+      image: "/path-to-assets/denplan-free.jpg"
+    },
+    {
+      title: "Denplan Offer",
+      subtitle: "Denplan Essentials offer",
+      icon: "🦷",
+      image: "/path-to-assets/denplan-offer.jpg"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header/Navigation */}
+     <Header />
+      {/* Hero Section */}
+      <section className="relative mt-0 h-[730px] bg-cover bg-center" style={{backgroundImage: `url(${offer})`}}>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
+        <div className="absolute mt-40 mx-20 inset-0 flex items-start justify-start px-8 pt-16">
+          <h1 className="text-xl md:text-6xl font-bold text-white">
+            Dental Special<br />Offers
+          </h1>
+        </div>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-full max-w-4xl px-4">
+          <div className="bg-[#5B7FA6] text-white p-6 rounded-2xl shadow-lg">
+            <p className="text-center text-base md:text-lg leading-relaxed">
+              As Your Experienced Dentists In Billericay We Understand That Sometimes 
+              Our Patients May Want Some Discounts On Popular Treatments. So On This 
+              Page We Will Regularly Post Future Dental Special Offers Especially For You.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Offers Grid */}
+      <section className="bg-[#F0F8FF] py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {offers.map((offer, index) => (
+              <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+                <div className="relative h-64 bg-gray-200">
+                  <img 
+                    src={offer.image} 
+                    alt={offer.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 bg-[#E6F3FF] rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-xl">{offer.icon}</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-1">{offer.title}</h3>
+                      <p className="text-sm text-gray-600">{offer.subtitle}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Additional Offer - £50 off */}
+          <div className="mt-6 max-w-md">
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition">
+              <div className="relative h-64 bg-gray-200">
+                <img 
+                  src="/path-to-assets/teeth-whitening.jpg" 
+                  alt="Teeth Whitening"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-[#E6F3FF] rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl">💡</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">£50 off</h3>
+                    <p className="text-sm text-gray-600">£50 off Teeth Whitening</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <Footer />
+    </div>
+  );
+};
+
+export default SpecialOffersPage;

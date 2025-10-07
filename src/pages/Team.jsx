@@ -1,10 +1,22 @@
 import React from 'react';
+import dentalexperts  from '../assets/dentalexperts.jpeg'; 
+import nishani from '../assets/nishani.png';
+import Header from '../components/Header';
+import Footer from '../components/Footer'
+import { Link } from 'react-router-dom';
+import ajay from '../assets/ajay.png';
+import deepam from '../assets/deepam.png';
+import heliyan from '../assets/heliyan.png';
+import jan from '../assets/jan.png';
+import anastasia from '../assets/anastasia.png';
+import zoe from '../assets/zoe.png';
+import claire from '../assets/claire.png';
 
 // Team member data
 const teamMembers = [
   {
     name: "Dentist: Nishani Joyasuriya BDS GDC 82268",
-    image: "/path-to-your-assets/nishani.jpg", // Replace with your actual path
+    image: nishani, // Replace with your actual path
     bio: `I qualified in 1999 at the Royal London Hospital (Whitechapel) with 1 went there to experience as life in a place that is very multi-racial and a hive of activity.
 
 I am a Dentist who provides NHS and some Private Dentistry. I am particularly interested in preventative Dentistry and Endodontics (Root Canal Treatment).
@@ -17,9 +29,10 @@ I adore the countryside, I love to go cycling and really need to take part in ch
 
 I adore kids and would love to go visit places like The Eden Project and Capability Browns parks! I absolutely love my work with kids. I trained it well when my preschool children were involved and look forward to restoring oral health in the NHS!`
   },
+  
   {
     name: "Dentist: Ajay Mathur BSc BDS (Lond) 2003, MJDF RCS (Eng) 2010 GDC 82275",
-    image: "/path-to-your-assets/ajay.jpg", // Replace with your actual path
+    image: ajay, // Replace with your actual path
     bio: `I graduated from King's College London in 2003 and also have an intercalated degree in Pharmacology.
 
 I completed the Vocational Training Scheme in 2004, and went on to undertake a very wide spectrum of dentistry in both the NHS and Private sector in the UK and Channel Islands.
@@ -34,7 +47,7 @@ Outside work I love spending time with my family and enjoy watching cricket, lis
   },
   {
     name: "Dentist: Deepam Patel BDS, MFGDP(UK), DipImpDent RCS(Eng), GradDipClinDent (Dentistry) GDC 80980",
-    image: "/path-to-your-assets/deepam.jpg", // Replace with your actual path
+    image: deepam, // Replace with your actual path
     bio: `Deepam Patel BSc(Hons), BDS(Hons), MJDF(RCS Eng), DipImpDentRCS(Eng), MSc(Lond), MRD(RCS Eng)
 
 Deepam qualified with Honours from Kings College London in 1996 and later obtained a Masters degree in Restorative Dentistry from Guy's College of Kings College London in 2010.
@@ -49,7 +62,7 @@ His dedication to providing high class care has resulted in him being chosen to 
   },
   {
     name: "Practice Manager: Heliyan Peris",
-    image: "/path-to-your-assets/heliyan.jpg", // Replace with your actual path
+    image: heliyan, // Replace with your actual path
     bio: `I joined the great team here at The Pantiles Dental practice in march 2018.
 
 I am with the team to ensure the smooth running of the practice, providing support to both you, the patients and the team, ensuring the practice runs smoothly and all regulations are adhered to.
@@ -60,7 +73,7 @@ When I am not at the practice, I am a proud mum to two boys. I enjoy spending ti
   },
   {
     name: "Hygienist: Jan West EDH GDC 1949",
-    image: "/path-to-your-assets/jan.jpg", // Replace with your actual path
+    image: jan, // Replace with your actual path
     bio: `I qualified as a Dental Hygienist from Guy's Hospital University of London in 1983 and my career in dentistry started when I trained as a Dental Nurse in 1973. In that time I have worked both in General Dental Practice and Hospital.
 
 I look closely with each dentist to ensure that every patient of oral hygiene is properly planned and delivered.
@@ -69,7 +82,7 @@ I love being part of this team and working here amongst so many inspiring and de
   },
   {
     name: "Dental Nurse: Anastasia Mamaja GDC 304290",
-    image: "/path-to-your-assets/anastasia.jpg", // Replace with your actual path
+    image: anastasia, // Replace with your actual path
     bio: `Hi! I started at The Pantiles in June 2021, and I'm training to become a fully qualified Dental Nurse through Surrey Adult Learning (AALL). Even though I'm new to the field, I really enjoy it!
 
 I have one cat called Callie who never stops demanding treats and a play session. In my spare time, I love going on walks with my little friend, dancing, playing games and binge watching movies.
@@ -80,7 +93,7 @@ I am open-minded, a huge part of what I do is centring for the skilled dental nu
   },
   {
     name: "Dental Nurse: Zoe Ann Allen GDC 147274",
-    image: "/path-to-your-assets/zoe.jpg", // Replace with your actual path
+    image: zoe, // Replace with your actual path
     bio: `I joined this practice in 2007 after over 20 years of experience in the dental profession. My career in dentistry started in 1987 when I trained as a Dental Nurse at Musgrove Park Hospital Lyme Regis Surgery.
 
 My husband and I have two children.
@@ -89,7 +102,7 @@ In my spare time I enjoy gardening, music, cross stitch and organising events fo
   },
   {
     name: "Receptionist/ Dental Nurse: Claire Overend",
-    image: "/path-to-your-assets/claire.jpg", // Replace with your actual path
+    image: claire, // Replace with your actual path
     bio: `I started working for The Pantiles Dental in 2006 and can't believe how quickly the time has gone.
 
 In my spare time, I love spending time with my kids, my children, family and friends and I have 2 dogs who I love taking out on walks.
@@ -100,14 +113,17 @@ I love working in such a happy environment with a wonderful team.`
 
 export default function DentalExpertsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen ">
+      
       {/* Hero Section */}
-      <section className="relative h-[500px] bg-cover bg-center" style={{backgroundImage: "url('/path-to-your-assets/hero-image.jpg')"}}>
+      <section className="relative h-[700px] bg-cover bg-center" style={{ backgroundImage: `url(${dentalexperts})` }}>
+         <Header />
+        
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl text-white">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Dental Experts</h1>
-            <p className="text-xl md:text-2xl font-light">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Dental <br></br>Experts</h1>
+            <p className="text-xl md:text-2xl font-medium">
               Our Team of Specialists, Dentists, Hygienists And Therapists in Bletchingley. 
               Offer an Extensive Range of Dental Treatments.
             </p>
@@ -115,16 +131,11 @@ export default function DentalExpertsPage() {
         </div>
       </section>
 
-      {/* Team Members Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          {teamMembers.map((member, index) => (
-            <div 
-              key={index} 
-              className={`flex flex-col md:flex-row gap-8 mb-16 ${
-                index % 2 === 0 ? '' : 'md:flex-row-reverse'
-              }`}
-            >
+       {/* Team Members Section */}
+      {teamMembers.map((member, index) => (
+        <section key={index} className={`py-16 px-4 ${index % 2 === 0 ? 'bg-white' : 'bg-blue-100'}`}>
+          <div className="container mx-auto max-w-6xl">
+            <div className="flex flex-col md:flex-row gap-8 mb-16">
               {/* Image */}
               <div className="md:w-1/3">
                 <div className="w-full aspect-[3/4] bg-gray-200 rounded-lg overflow-hidden">
@@ -152,64 +163,11 @@ export default function DentalExpertsPage() {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Footer Section */}
-      <footer className="bg-[#0A2540] text-white py-12 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            {/* Invisalign */}
-            <div className="flex items-center justify-center md:justify-start">
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2">★ Invisalign</div>
-                <p className="text-sm text-blue-300">Diamond Apex Provider</p>
-              </div>
-            </div>
-
-            {/* Straumann */}
-            <div className="flex items-center justify-center md:justify-start">
-              <div className="text-center">
-                <div className="text-2xl font-bold">Straumann</div>
-                <p className="text-sm text-gray-300">Implants</p>
-              </div>
-            </div>
-
-            {/* Enlighten */}
-            <div className="flex items-center justify-center md:justify-start">
-              <div className="text-center">
-                <div className="text-2xl font-bold">⚪ enlighten</div>
-                <p className="text-sm text-gray-300">evolution 3</p>
-              </div>
-            </div>
-
-            {/* Contact */}
-            <div className="text-center md:text-left">
-              <h3 className="font-bold mb-3">The Pantiles Dental</h3>
-              <p className="text-sm text-gray-300 mb-2">High Street, Bletchingley</p>
-              <p className="text-sm text-gray-300 mb-2">Surrey RH1 4PA</p>
-              <p className="text-sm text-gray-300 mb-2">Tel: 01342 892274</p>
-              <p className="text-sm text-blue-300">info@thepantilesdental.co.uk</p>
-            </div>
           </div>
+        </section>
+      ))}
 
-          {/* Quick Links */}
-          <div className="border-t border-gray-700 pt-8">
-            <div className="flex flex-wrap justify-center gap-6 mb-6">
-              <a href="#home" className="text-sm hover:text-blue-300 transition">Home</a>
-              <a href="#about" className="text-sm hover:text-blue-300 transition">About Us</a>
-              <a href="#services" className="text-sm hover:text-blue-300 transition">Services</a>
-              <a href="#fees" className="text-sm hover:text-blue-300 transition">Fees</a>
-              <a href="#testimonials" className="text-sm hover:text-blue-300 transition">Testimonials</a>
-              <a href="#contact" className="text-sm hover:text-blue-300 transition">Contact Us</a>
-            </div>
-            <p className="text-center text-sm text-gray-400">
-              © 2025 The Pantiles Dental Practice. Designed by Ceylon Innovation. Last updated on 21st of March 2025.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 }
