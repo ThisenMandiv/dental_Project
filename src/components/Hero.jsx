@@ -4,7 +4,7 @@ import Hero1 from '../assets/Hero1.png'
 const Hero = () => {
   return (
 <section
-  className="relative bg-gradient-to-r from-blue-600/80 to-purple-700/80 text-white pt-24 pb-16 bg-cover bg-center"
+  className="relative bg-gradient-to-r from-blue-600/80 to-purple-700/80 text-white pt-35 pb-16 bg-cover bg-center"
   style={{ backgroundImage: `url(${Hero1})` }}
 >
  <div className="container mx-auto pl-4 md:pl-20 py-30 text-left relative z-10">
