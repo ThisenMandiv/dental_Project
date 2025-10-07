@@ -1,43 +1,128 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+
+const testimonials = [
+  {
+    title: 'Highly Recommend',
+    quote: 'I can confidently say they\'re the best! The staff is always welcoming, and Doctors are exceptionally skilled.',
+    name: 'Stella Herman',
+    location: 'Macejkovicbury',
+    avatarUrl: 'https://picsum.photos/seed/stella/100/100',
+    imageUrl: 'https://picsum.photos/seed/t1/400/300',
+  },
+  {
+    title: 'Gentle and Caring',
+    quote: 'I can confidently say they\'re the best! The staff is always welcoming, and Doctors are exceptionally skilled.',
+    name: 'Beulah Mertz',
+    location: 'Chelsieshire',
+    avatarUrl: 'https://picsum.photos/seed/beulah/100/100',
+    imageUrl: 'https://picsum.photos/seed/t2/400/300',
+  },
+  {
+    title: 'A Wonderful Experience',
+    quote: 'I can confidently say they\'re the best! The staff is always welcoming, and Doctors are exceptionally skilled.',
+    name: 'Wilfred Jerde',
+    location: 'Wisokytown',
+    avatarUrl: 'https://picsum.photos/seed/wilfred/100/100',
+    imageUrl: 'https://picsum.photos/seed/t3/400/300',
+  },
+  {
+    title: 'Top-Notch Service',
+    quote: 'The level of care and professionalism here is unmatched. I always feel comfortable and well-cared for.',
+    name: 'Jane Doe',
+    location: 'Anytown',
+    avatarUrl: 'https://picsum.photos/seed/jane/100/100',
+    imageUrl: 'https://picsum.photos/seed/t4/400/300',
+  },
+];
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      text: "I can confidently say they're the best! The staff is always welcoming, and Doctors are exceptionally skilled",
-      author: "Stella Herman",
-      location: "Billericay"
-    },
-    {
-      text: "Gentle and caring approach. Made me feel comfortable throughout my treatment.",
-      author: "Beulah Mertz", 
-      location: "Chelmsford"
-    },
-    {
-      text: "A wonderful experience! The staff is always welcoming, and Doctors are exceptionally skilled",
-      author: "Wilfred Jerde",
-      location: "Wisokytown"
-    }
-  ]
-
   return (
-    <section className="py-16 bg-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">What Our Patients Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="text-4xl md:text-5xl font-serif text-center text-gray-800 mb-12"
+        >
+          Our Happy Clients
+        </motion.h2>
+        
+        <Swiper
+          modules={[Pagination]}
+          spaceBetween={30}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
+          }}
+          className="!pb-12"
+        >
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-6 shadow-lg border-l-4 border-blue-500">
-              <p className="text-gray-600 italic mb-4">"{testimonial.text}"</p>
-              <div className="text-right">
-                <strong className="text-gray-800">{testimonial.author}</strong>
-                <br />
-                <span className="text-gray-500 text-sm">{testimonial.location}</span>
-              </div>
-            </div>
+            <SwiperSlide key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative pt-24"
+              >
+                <div className="absolute top-0 left-0 right-0 h-48">
+                  <img 
+                    src={testimonial.imageUrl} 
+                    alt={`Testimonial background ${index + 1}`} 
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                </div>
+                <div className="relative bg-white rounded-2xl shadow-lg p-6 pt-8 mx-4">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2 text-center">{testimonial.title}</h3>
+                  <p className="text-gray-600 italic text-center mb-6">"{testimonial.quote}"</p>
+                  <div className="flex items-center justify-center">
+                    <img 
+                      src={testimonial.avatarUrl} 
+                      alt={testimonial.name} 
+                      className="w-12 h-12 rounded-full object-cover mr-4"
+                    />
+                    <div>
+                      <p className="font-bold text-gray-800">{testimonial.name}</p>
+                      <p className="text-gray-500 text-sm">{testimonial.location}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </SwiperSlide>
           ))}
+        </Swiper>
+
+        <div className="text-center mt-12">
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="border border-gray-400 text-gray-600 font-semibold py-3 px-8 hover:bg-gray-100 transition-colors"
+          >
+            ADD TESTIMONIALS
+          </motion.button>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;
