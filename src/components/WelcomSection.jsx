@@ -5,7 +5,7 @@ import doctorImage from '../assets/doctor-image.png';
 const WelcomeSection = () => {
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-20">
         {/* Header Section */}
         <motion.div 
           className="text-center mb-16"
@@ -49,11 +49,11 @@ const WelcomeSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative overflow-hidden rounded-[40px] shadow-lg">
+            <div className="relative overflow-hidden rounded-[100px] shadow-lg">
               <img 
                 src={doctorImage} 
                 alt="Professional Dental Doctor" 
-                className="w-full h-auto object-cover"
+                className="w-[800px] h-[600px] object-cover" 
               /> 
             </div>
           </motion.div>
