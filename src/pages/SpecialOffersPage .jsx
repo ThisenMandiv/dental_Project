@@ -4,7 +4,12 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom'
 import offer from '../assets/offerbg.jpg';
-
+import invisalign from '../assets/invisalign.png'; // Ensure this path points to your actual logo image
+import facial from '../assets/facial.png'; 
+import imple from '../assets/imple.png';
+import couple from '../assets/couple.png';
+import apple from '../assets/apple.png';
+import apple1 from '../assets/apple1.png';
 
 const SpecialOffersPage = () => {
   const offers = [
@@ -12,37 +17,37 @@ const SpecialOffersPage = () => {
       title: "Invisalign",
       subtitle: "free consultation",
       icon: "🦷",
-      image: "/path-to-assets/invisalign.jpg"
+      image: invisalign,
     },
     {
       title: "Facial Aesthetics",
       subtitle: "Complimentary consultation",
       icon: "💉",
-      image: "/path-to-assets/facial.jpg"
+      image: facial
     },
     {
       title: "consultation fee",
       subtitle: "Implant/ologist consultation fee is now £90",
       icon: "🔍",
-      image: "/path-to-assets/implant.jpg"
+      image: imple,
     },
     {
       title: "New patient",
       subtitle: "New patient offer only £75",
       icon: "🦷",
-      image: "/path-to-assets/new-patient.jpg"
+      image: couple,
     },
     {
       title: "Free Denplan",
       subtitle: "Free Denplan Assessment",
       icon: "🦷",
-      image: "/path-to-assets/denplan-free.jpg"
+      image: apple,
     },
     {
       title: "Denplan Offer",
       subtitle: "Denplan Essentials offer",
       icon: "🦷",
-      image: "/path-to-assets/denplan-offer.jpg"
+      image: apple1,
     }
   ];
 
