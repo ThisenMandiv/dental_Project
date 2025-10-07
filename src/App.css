@@ -10,7 +10,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #000000aa);
+  filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -45,24 +45,5 @@
   color: #0b1720; /* dark text for contrast */
  
   border-radius: 20px; /* more rounded corners */
-}
-
-/* Hero button explicit styles to override global button defaults */
-.nav-btn {
-  background-color: #223B6E; /* very light blue */
-  color: #ffffff;            /* white text for contrast */
-  border-radius: 20px;       /* rounded corners */
-
-  font-weight: 500;          /* optional: semi-bold text */
-  border: none;              /* optional: remove default border */
-  cursor: pointer;           /* pointer on hover */
-  transition: background-color 0.3s, color 0.3s;
-  width: 200px; 
-  max-width: 100%;
-}
-
-.nav-btn:hover {
-  background-color: #1a2d59; /* slightly darker blue on hover */
-  color: #ffffff;             /* keep text white */
 }
 
