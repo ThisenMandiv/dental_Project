@@ -15,72 +15,127 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-[90%] lg:w-[1300px] max-w-[1800px]">
-      <div className="w-full h-[60px] flex items-center justify-between px-4 md:px-8 bg-white/50 backdrop-blur-md shadow-lg rounded-3xl md:rounded-[2rem]">
-        {/* Logo */}
-        <a href="#home" className="flex items-center gap-2 text-lg md:text-xl font-bold text-black z-50">
-          <img src={logo} alt="Logo" className="w-10 h-10 md:w-20 md:h-10" />
-          
-        </a>
+    <header className="bg-white shadow-md fixed w-11/12 top-6 left-1/2 transform -translate-x-1/2 z-50 rounded-4xl py-0 px-4">
+      <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="flex items-center">
+          <img src={logo} alt="Pantiles Dental Logo" className="h-10 md:h-12" />
+        </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-12 text-black font-sans">
-          {navLinks.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              className="font-bold hover:text-blue-900 transition text-sm xl:text-base"
-            >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href="#book"
-            className="ml-2 xl:ml-4 bg-[#223B6E] text-white px-6 xl:px-8 py-2 rounded-full hover:bg-blue-900 transition font-bold text-sm xl:text-base whitespace-nowrap"
-          >
-            Book Now
-          </a>
-        </nav>
+        {/* Desktop Navigation */}
+        <ul className="hidden lg:flex space-x-6">
+          <li>
+            <Link to="/" className="text-gray-700 hover:text-blue-800 font-medium transition duration-300">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="text-gray-700 hover:text-blue-800 font-medium transition duration-300">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/services" className="text-gray-700 hover:text-blue-800 font-medium transition duration-300">
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="/fees" className="text-gray-700 hover:text-blue-800 font-medium transition duration-300">
+              Fees
+            </Link>
+          </li>
+          <li>
+            <Link to="/special-offers" className="text-gray-700 hover:text-blue-800 font-medium transition duration-300">
+              Special Offers
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="text-gray-700 hover:text-blue-800 font-medium transition duration-300">
+              Contact Us
+            </Link>
+          </li>
+        </ul>
+
+        {/* Desktop Book Now Button */}
+        <button className="hidden lg:block bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+          Book Now
+        </button>
 
         {/* Mobile Burger */}
         <button
-          className="lg:hidden text-[#223B6E] z-50 p-2"
-          onClick={() => setOpen((o) => !o)}
+          onClick={toggleMenu}
+          className="lg:hidden text-gray-700 hover:text-blue-800 transition duration-300"
           aria-label="Toggle menu"
         >
-          {open ? <X size={28} /> : <Menu size={28} />}
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden absolute top-full left-0 right-0 mt-2 overflow-hidden bg-white/95 backdrop-blur-md rounded-2xl shadow-xl transition-all duration-300 ease-in-out ${
-          open ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <ul className="flex flex-col gap-1 px-4 py-4 text-[#223B6E]">
-          {navLinks.map((l) => (
-            <li key={l.label}>
-              <a
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="block py-3 px-4 font-semibold hover:bg-blue-50 rounded-lg transition"
+      {/* Mobile Navigation Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200">
+          <ul className="flex flex-col space-y-2 px-4 py-4">
+            <li>
+              <Link
+                to="/"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
               >
-                {l.label}
-              </a>
+                Home
+              </Link>
             </li>
-          ))}
-          <li className="mt-2">
-            <a
-              href="#book"
-              onClick={() => setOpen(false)}
-              className="block w-full text-center bg-[#223B6E] text-white px-5 py-3 rounded-full hover:bg-blue-900 transition font-bold"
-            >
-              Book Now
-            </a>
-          </li>
-        </ul>
-      </div>
+            <li>
+              <Link
+                to="/about"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
+              >
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/fees"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
+              >
+                Fees
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/special-offers"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
+              >
+                Special Offers
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                onClick={closeMenu}
+                className="block text-gray-700 hover:text-blue-800 font-medium py-2 transition duration-300"
+              >
+                Contact Us
+              </Link>
+            </li>
+            <li className="pt-2">
+              <button className="w-full bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+                Book Now
+              </button>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

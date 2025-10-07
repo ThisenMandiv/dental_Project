@@ -38,107 +38,27 @@ const slides = [
 
 const Hero = () => {
   return (
-    <section className="relative text-white h-screen min-h-[800px] flex items-center justify-center overflow-hidden">
-      {/* Background Image Slider */}
-      <Swiper
-        modules={[Autoplay, EffectFade,  Pagination]}
-        effect="fade"
-        speed={1500}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        navigation={true}
-        pagination={{
-          clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class="' + className + '"' + '0' + (index + 1) + '</span>';
-          }
-        }}
-        loop={true}
-        className="absolute inset-0 w-full h-full z-0"
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={slide.id}>
-            <div className="w-full h-full relative">
-              <img
-                src={slide.image}
-                alt={`Dental practice background ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-              {/* Enhanced Gradient Overlay - Strong on left, fade to right */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-700/50 to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20"></div>
-              
-              {/* Slide Content */}
-              <div className="absolute inset-0 flex items-center justify-start">
-                <div className="container mx-auto px-4 md:px-8 lg:px-20 relative z-10 w-full">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: 'easeOut' }}
-                    className="max-w-4xl"
-                  >
-                    <motion.h1
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-                      className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight"
-                    >
-                      {slide.title}
-                    </motion.h1>
+<section
+  className="relative bg-gradient-to-r from-blue-600/80 to-purple-700/80 text-white pt-24 pb-16 bg-cover bg-center"
+  style={{ backgroundImage: `url(${Hero1})` }}
+>
+ <div className="container mx-auto pl-4 md:pl-20 py-30 text-left relative z-10">
 
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1, delay: 0.6, ease: 'easeOut' }}
-                      className="text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed text-blue-100 font-light"
-                    >
-                      {slide.subtitle}
-                    </motion.p>
+    <h1 className="text-4xl md:text-5xl font-bold mb-4">CREATING BEAUTIFUL SMILES</h1>
 
-                    <motion.button
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 0.9, ease: 'easeOut' }}
-                      whileHover={{
-                        scale: 1.05,
-                        y: -2,
-                        boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                      className="bg-gradient-to-r from-teal-400 to-cyan-500 text-black font-bold py-4 px-10 rounded-full transition-all duration-300 transform text-lg md:text-xl shadow-2xl border-2 border-transparent hover:from-teal-500 hover:to-cyan-600"
-                    >
-                      {slide.buttonText}
-                    </motion.button>
-                  </motion.div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+   
+    <p className="text-xl mb-8 max-w-2xl ">
+      Book your hygiene appointment with our lovely 
+and experienced hygienenist for a pearly white smile  
+    </p>
+  <button className="hero-btn bg-blue-100 hover:bg-blue-200 text-black font-bold py-3 px-8 rounded-4xl transition duration-300 transform hover:scale-105">
+    Book Now
+  </button>
 
-      {/* Custom Pagination Styles */}
+  </div>
 
+  {/* Optional dark overlay for readability */}
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1 h-3 bg-white rounded-full mt-2"
-          ></motion.div>
-        </div>
-      </motion.div>
-    </section>
-  );
-};
+</section>
 
 export default Hero;
