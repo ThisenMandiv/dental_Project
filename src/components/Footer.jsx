@@ -12,10 +12,10 @@ const Footer = () => {
           {/* Pantiles Dental */}
           <div className="col-span-1">
             <a href="#" className="text-2xl font-bold mb-4">
-              <img src={invisalign} alt="invisalign" className="h-10 mr-4" />
+              <img src={invisalign} alt="invisalign" className="h-20 mr-4" />
               
             </a>
-            <h3 className="text-2xl font-bold mb-4">Pantiles Dental</h3>
+            <h3 className="text-2xl font-bold mb-4 mt-20">Pantiles Dental</h3>
             <p className="text-gray-300">
               We have an array of treatments available for every member of your family to ensure everyone, regardless of budget, has access to quality dental care.
             </p>
@@ -27,10 +27,10 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <a href="#" className="text-xl font-bold mb-4">
-              <img src={straumann} alt="straumann implants" className="h-10 mr-4" />
+              <img src={straumann} alt="straumann implants" className="h-20 mr-4" />
              
             </a>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 mt-10">Quick Links</h4>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-300 hover:text-white">Home</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white">Services</a></li>
@@ -41,11 +41,11 @@ const Footer = () => {
 
           {/* About Us */}
           <div>
-            <a href="#" className="text-xl font-bold mb-4">
-              <img src={enlighten} alt="Enlighten Teeth Whitening" className="h-10 mr-4" />
+            <a href="#" className="text-xl font-bold mb-4 ">
+              <img src={enlighten} alt="Enlighten Teeth Whitening" className="h-20 mr-30 mx-20" />
               
             </a>
-            <h4 className="text-lg font-semibold mb-4">About Us</h4>
+            <h4 className="text-lg font-semibold mb-4 mt-10">About Us</h4>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-300 hover:text-white">Events</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white">Testimonial</a></li>
@@ -54,7 +54,7 @@ const Footer = () => {
 
           {/* Contact Us */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+            <h4 className="text-lg font-semibold mb-6 mt-30">Contact Us</h4>
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Phone size={18} className="mr-3" />

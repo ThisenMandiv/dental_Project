@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Services', href: '/services' },
   { label: 'Fees', href: '/fees' },
   { label: 'Special Offers', href: '/offers' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'ContactUsPage', href: '/contact' },
 ];
 
 export default function Header() {
