@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-import logo from '../assets/logo.png'; // Ensure this path points to your actual logo image
+import logo from '../assets/logo.png';
 
 const navLinks = [
-  { label: 'Home', href: '/home' },
+  { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Fees', href: '/fees' },
   { label: 'Special Offers', href: '/offers' },
-  { label: 'ContactUsPage', href: '/contact' },
+  { label: 'Contact Us', href: '/contact' },
 ];
 
 export default function Header() {
@@ -18,24 +17,22 @@ export default function Header() {
 
   return (
     <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1600px]">
-
       <div className="w-full h-[60px] flex items-center justify-between px-4 md:px-8 bg-white/50 backdrop-blur-md shadow-lg rounded-3xl md:rounded-[2rem]">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2 text-lg md:text-xl font-bold text-black z-50">
+        <Link to="/" className="flex items-center gap-2 text-lg md:text-xl font-bold text-black z-50">
           <img src={logo} alt="Logo" className="w-10 h-10 md:w-20 md:h-10" />
-          
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-12 text-black font-sans">
           {navLinks.map((l) => (
-            <a
+            <Link
               key={l.label}
-              href={l.href}
+              to={l.href}
               className="font-bold hover:text-blue-900 transition text-sm xl:text-base"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
           <a
             href="#book"
@@ -64,13 +61,13 @@ export default function Header() {
         <ul className="flex flex-col gap-1 px-4 py-4 text-[#223B6E]">
           {navLinks.map((l) => (
             <li key={l.label}>
-              <a
-                href={l.href}
+              <Link
+                to={l.href}
                 onClick={() => setOpen(false)}
                 className="block py-3 px-4 font-semibold hover:bg-blue-50 rounded-lg transition"
               >
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li className="mt-2">
