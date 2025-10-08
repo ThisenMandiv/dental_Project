@@ -15,7 +15,7 @@ const Footer = () => {
               <img src={invisalign} alt="invisalign" className="h-20 mr-4" />
               
             </a>
-            <h3 className="text-2xl font-bold mb-4 mt-20">Pantiles Dental</h3>
+            <h3 className="text-2xl font-bold mb-4 mt-10">Pantiles Dental</h3>
             <p className="text-gray-300">
               We have an array of treatments available for every member of your family to ensure everyone, regardless of budget, has access to quality dental care.
             </p>
