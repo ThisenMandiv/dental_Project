@@ -1,36 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import h1 from '../assets/h1.jpg';
+import h2 from '../assets/h2.jpg';
+import h3 from '../assets/h3.jpg';
+import h4 from '../assets/h4.jpg';
+import h5 from '../assets/h5.jpg';
+import h6 from '../assets/h6.jpg';
+
 
 const services = [
   {
     title: 'General Dentistry',
     description: 'We provide a wide range of general dentistry from our Billericay practice. Whether you\'re in Billericay itself, Basildon, Ingatestone, Stock, or even further afield, our dental practice can offer you the general dentistry you need to ensure your mouth remains as healthy as possible.',
-    imageUrl: 'https://picsum.photos/seed/gd/400/300',
+    imgSrc: h6,
   },
   {
     title: 'Cosmetic Dentistry',
     description: 'Cosmetic dentistry is fast becoming a necessity as more and more people strive for the ultimate Hollywood smile. Here at Pantiles Dental, however, we offer a range of different cosmetic dentistry treatments to ensure everyone gets the right course of treatment for them. Let\'s take a closer look at just some of the treatments available in our Billericay dental practice.',
-    imageUrl: 'https://picsum.photos/seed/cd/400/300',
+    imgSrc: h5,
   },
   {
     title: 'Dental Implants',
     description: 'The dental implant is designed to replace the missing tooth root and hold the artificial tooth in place. It is a screw made of a titanium screw that replaces the root of a tooth when it fails, and similar to a tooth root, it is placed into the jawbone.',
-    imageUrl: 'https://picsum.photos/seed/di/400/300',
+    imgSrc: h1,
   },
   {
     title: 'Denplan Care',
     description: 'Denplan Care monthly payment plan provides for regular dental care to maintain your dental health. A free dental assessment is made before you join so that the price you pay is dependent on the \'health\' of your mouth. It includes the following treatment, when clinically necessary and where carried out at the practice by your registered dentist.',
-    imageUrl: 'https://picsum.photos/seed/dc/400/300',
+    imgSrc: h2,
   },
   {
     title: 'Denplan Essentials',
     description: 'Denplan Essentials monthly payment plan provides for your routine preventive dental care. You also benefit from 10% discount from any further appointments you need. It is easy to set up and no preassessment is necessary.',
-    imageUrl: 'https://picsum.photos/seed/de/400/300',
+    imgSrc: h3,
   },
   {
     title: 'NHS Dental Services',
     description: 'We have a small NHS contract that only allows us to provide NHS dental services for a limited number of patients. Please contact for details of availability.',
-    imageUrl: 'https://picsum.photos/seed/nhs/400/300',
+    imgSrc: h4,
   },
 ];
 
@@ -57,7 +64,7 @@ const Services = () => {
               transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
               className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
             >
-              <img src={service.imageUrl} alt={service.title} className="w-full h-56 object-cover"/>
+              <img src={service.imgSrc} alt={service.title} className="w-full h-56 object-cover"/>
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-2xl font-bold text-gray-800 mb-3">{service.title}</h3>
                 <p className="text-gray-600 mb-4 flex-grow">{service.description}</p>

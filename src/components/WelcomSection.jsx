@@ -25,7 +25,7 @@ const WelcomeSection = () => {
           </h1>
           
           <motion.p 
-            className="text-base text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8"
+            className="text-base text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8 text-xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -34,13 +34,7 @@ const WelcomeSection = () => {
             Looking For The Perfect Hollywood Smile? Want A Family-Friendly Dental Practice To Ensure Your Loved Ones Have Happy, Healthy Teeth And Gums? Then Look No Further Than 15 The Pantiles Dental Practice. Here In Our Dental Practice In Billericay, We Boast Incredibly Skilled Dental Practitioners Who Aren't Just Highly Skilled And Experienced, But Have Access To Some Of The Most Up To Date Technology Available. From <strong>General Dentistry</strong> To <strong>Cosmetic Dentistry</strong>, We Have An Array Of Treatments Available For Every Member Of Your Family To Ensure Everyone, Regardless Of Budget, Has Access To Quality Dental Care. From <strong>Root Canal Treatment</strong> And <strong>Teeth Whitening</strong> To <strong>Fillings</strong> And <strong>Smile Makeovers</strong>; Whatever It Is You're Looking For, You Can Rest Assured That You'll Be In Safe Hands Here At 15 The Pantiles Dental Practice.
           </motion.p>
 
-          <motion.button
-            className="border border-gray-400 text-gray-600 px-8 py-3 font-semibold hover:bg-gray-100 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            LOREM IPSUM HA
-          </motion.button>
+         
         </motion.div>
 
         {/* Doctor Image Left + Content Right Section */}
@@ -69,24 +63,23 @@ const WelcomeSection = () => {
             className="space-y-6"
           >
             <h3 className="text-4xl font-bold text-gray-800 leading-tight">
-              Lorem Ipsum Has Been The Industry's
+              Welcoming New Patients
             </h3>
             
-            <p className="text-base text-gray-600 leading-relaxed">
-              Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type And Scrambled It To Make A Type Specimen Book. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since.
+            <p className="text-base text-gray-600 leading-relaxed text-xl">
+              Whether you’re a new patient with ‘dental nerves’ or are simply looking for more in-depth cosmetic dentistry, here in dental practice you’ll receive the very best of care regardless.  We’ll help you transform your smile with the best quality orthodontics and cosmetic dentistry. We’ll also ensure your gum health and teeth remains in top form thanks to our incredible team.
             </p>
+
+            <h1 className="text-4xl font-bold text-blue-800 leading-tight text-center">
+              ARE YOU A NEW PATIENT?
+            </h1>
+            <h3 className="text-2xl font-bold text-black-800 leading-tight text-center">
+              HURRY AND GRAB THE £75 OFFER!
+            </h3>
             
-            <p className="text-base text-gray-600 leading-relaxed">
-              Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type And Scrambled It To Make A Type Specimen Book. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever.
-            </p>
+           
             
-            <motion.button
-              className="bg-cyan-400 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition-colors shadow-md"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Lorem Ipsum Hi
-            </motion.button>
+           
           </motion.div>
         </div>
 
