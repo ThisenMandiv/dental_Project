@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import doctorImage from '../assets/doctor-image.png';
+import float1 from '../assets/float1.png';
+import float2 from '../assets/float2.png';
+import float3 from '../assets/float3.png';  
 
 const WelcomeSection = () => {
   return (
@@ -115,9 +118,9 @@ const WelcomeSection = () => {
             
             <div className="relative h-80">
               {/* Replace these with your actual images */}
-              <img src="https://picsum.photos/seed/dental1/300/200" alt="Invisalign 1" className="absolute -top-20  right-5 w-60 h-40 object-cover rounded-2xl shadow-lg transform -rotate-15"/>
-              <img src="https://picsum.photos/seed/dental2/300/200" alt="Invisalign 2" className="absolute top-20 right-0 w-60 h-40 object-cover rounded-2xl shadow-lg transform rotate-6"/>
-              <img src="https://picsum.photos/seed/dental3/200/200" alt="Invisalign 3" className="absolute bottom-[-70px] right-1/3 translate-x-1/2 w-50 h-50 object-cover rounded-2xl shadow-lg"/>
+              <img src={float1} alt="Invisalign 1" className="absolute -top-20  right-5 w-60 h-40 object-cover rounded-2xl shadow-lg transform -rotate-15"/>
+              <img src={float2} alt="Invisalign 2" className="absolute top-20 right-0 w-60 h-40 object-cover rounded-2xl shadow-lg transform rotate-6"/>
+              <img src={float3} alt="Invisalign 3" className="absolute bottom-[-70px] right-1/3 translate-x-1/2 w-50 h-50 object-cover rounded-2xl shadow-lg"/>
             </div>
           </div>
         </motion.div>

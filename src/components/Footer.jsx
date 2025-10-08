@@ -6,10 +6,10 @@ import enlighten from '../assets/enlighten-logo.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0A1F3D] text-white pt-16 pb-6">
+    <footer className="bg-[#0A1F3D] text-white pt-8 pb-6">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
           {/* Column 1: Invisalign & Pantiles Dental */}
           <div className="flex flex-col">
             <div className="mb-6">
