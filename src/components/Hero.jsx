@@ -13,25 +13,27 @@ import Hero2 from '../assets/Hero2.png';
 import Hero3 from '../assets/Hero3.png';
 
 const slides = [
-  {
-    id: 1,
-    image: Hero1,
-    title: "CREATING BEAUTIFUL SMILES",
-    subtitle: "Safe and healthy!",
-    buttonText: "BOOK NOW"
-  },
+{
+  id: 1,
+  image: Hero1,
+  title: "CREATING BEAUTIFUL SMILES",
+  subtitle1: "Book your hygiene appointment with our lovely",
+  subtitle2: "and experienced hygienist for a pearly white smile",
+  buttonText: "BOOK NOW"
+},
+
   {
     id: 2,
     image: Hero2,
     title: "ARE YOU NEW TO OUR PRACTICES?",
-    subtitle: "PREMIUM: 10.00 AM - 20.00 PM",
+    subtitle: "Check out for our new Patient special for £75",
     buttonText: "BOOK NOW"
   },
   {
     id: 3,
     image: Hero3,
     title: "COMPOSITE BONDING",
-    subtitle: "Suitable • Fresh air",
+    subtitle: "A Natural looking healthy that you are proud to show off",
     buttonText: "BOOK NOW"
   }
 ];
@@ -89,14 +91,36 @@ const Hero = () => {
                       {slide.title}
                     </motion.h1>
 
-                    <motion.p
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 1, delay: 0.6, ease: 'easeOut' }}
-                      className="text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed text-blue-100 font-light"
-                    >
-                      {slide.subtitle}
-                    </motion.p>
+{slide.subtitle ? (
+  <motion.p
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1, delay: 0.6, ease: 'easeOut' }}
+    className="text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed text-blue-100 font-light"
+  >
+    {slide.subtitle}
+  </motion.p>
+) : (
+  <>
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.6, ease: 'easeOut' }}
+      className="text-lg md:text-xl lg:text-2xl mb-2 leading-relaxed text-blue-100 font-light"
+    >
+      {slide.subtitle1}
+    </motion.p>
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
+      className="text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed text-blue-100 font-light"
+    >
+      {slide.subtitle2}
+    </motion.p>
+  </>
+)}
+
 
                     <motion.button
                       initial={{ opacity: 0, scale: 0.9 }}
