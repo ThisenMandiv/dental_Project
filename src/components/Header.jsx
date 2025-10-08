@@ -17,7 +17,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-[90%] lg:w-[1300px] max-w-[1800px]">
+    <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[80%] md:w-[80%] lg:w-[1100px] max-w-[1300px]">
       <div className="w-full h-[60px] flex items-center justify-between px-4 md:px-8 bg-white/50 backdrop-blur-md shadow-lg rounded-3xl md:rounded-[2rem]">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-2 text-lg md:text-xl font-bold text-black z-50">
