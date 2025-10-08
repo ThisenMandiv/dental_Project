@@ -60,7 +60,7 @@ const WelcomeSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-6"
           >
-            <h3 className="text-4xl font-bold text-gray-800 leading-tight text-center">
+            <h3 className="text-4xl font-bold text-gray-800 leading-tight">
               Welcoming New Patients
             </h3>
 
