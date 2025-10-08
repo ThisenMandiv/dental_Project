@@ -16,7 +16,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1600px]">
+    <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1600px]  ">
       <div className="w-full h-[60px] flex items-center justify-between px-4 md:px-8 bg-white/50 backdrop-blur-md shadow-lg rounded-3xl md:rounded-[2rem]">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 text-lg md:text-xl font-bold text-black z-50">
@@ -29,7 +29,7 @@ export default function Header() {
             <Link
               key={l.label}
               to={l.href}
-              className="font-bold hover:text-blue-900 transition text-sm xl:text-base"
+              className="font-bold hover:text-green-900 transition text-sm xl:text-base"
             >
               {l.label}
             </Link>

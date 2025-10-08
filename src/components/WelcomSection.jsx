@@ -85,7 +85,7 @@ const WelcomeSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-[#0A2540] rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 relative overflow-hidden"
+          className="bg-[#0A2540] rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 relative overflow-visible"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Text Content */}
@@ -107,21 +107,21 @@ const WelcomeSection = () => {
             </div>
             
             {/* Floating Images - Desktop */}
-            <div className="hidden lg:block relative h-80">
+            <div className="hidden lg:block relative h-96 min-h-[400px]">
               <img 
                 src={float1} 
                 alt="Invisalign 1" 
-                className="absolute -top-20 right-5 w-60 h-40 object-cover rounded-2xl shadow-lg transform -rotate-12"
+                className="absolute -top-10 right-5 w-64 h-44 object-cover rounded-2xl shadow-lg transform -rotate-12"
               />
               <img 
                 src={float2} 
                 alt="Invisalign 2" 
-                className="absolute top-20 right-0 w-60 h-40 object-cover rounded-2xl shadow-lg transform rotate-6"
+                className="absolute top-24 right-0 w-64 h-44 object-cover rounded-2xl shadow-lg transform rotate-6"
               />
               <img 
                 src={float3} 
                 alt="Invisalign 3" 
-                className="absolute bottom-[-70px] right-1/3 translate-x-1/2 w-50 h-50 object-cover rounded-2xl shadow-lg"
+                className="absolute bottom-4 right-20 w-52 h-52 object-cover rounded-2xl shadow-lg"
               />
             </div>
 
