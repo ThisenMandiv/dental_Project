@@ -111,7 +111,7 @@ I love working in such a happy environment with a wonderful team.`
   }
 ];
 
-export default function DentalExpertsPage() {
+function About() {
   return (
     <div className="min-h-screen ">
       
