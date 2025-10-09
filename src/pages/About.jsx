@@ -1,313 +1,175 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import aboutHeroImage from '../assets/about_us_hero.jpg';
-import Dentist from '../assets/Dentist.png';
+import React from 'react';
+import dentalexperts  from '../assets/dentalexperts.jpeg'; 
 import nishani from '../assets/nishani.png';
-import annmarie from '../assets/annmarie.jpeg';
-import zoe from '../assets/zoe.png';
+import Header from '../components/Header';
+import Footer from '../components/Footer'
+import { Link } from 'react-router-dom';
 import ajay from '../assets/ajay.png';
 import deepam from '../assets/deepam.png';
 import heliyan from '../assets/heliyan.png';
-import anastasia from '../assets/anastasia.png';
 import jan from '../assets/jan.png';
+import anastasia from '../assets/anastasia.png';
+import zoe from '../assets/zoe.png';
 import claire from '../assets/claire.png';
-import happyclient4 from '../assets/happyclient4.jpg';
 
-const About = () => {
-  const teamMembers = [
-    { name: "Zoe Ann Allen", role: "Dental Nurse", image: zoe, gradient: "from-blue-900/90" },
-    { name: "Ajay Mathur", role: "Dentist", image: ajay, gradient: "from-blue-900/90" },
-    { name: "Deepam Patel", role: "Dentist", image: deepam, gradient: "from-blue-900/90" },
-    { name: "Heliyan Peiris", role: "Practice Manager", image: heliyan, gradient: "from-blue-900/90" },
-    { name: "Anastasija Mamaja", role: "Dental Hygienist", image: anastasia, gradient: "from-blue-900/90" },
-    { name: "Ann Marie", role: "Receptionist", image: annmarie, gradient: "from-blue-900/90" },
-    { name: "Claire Overend", role: "Orthodontist", image: claire, gradient: "from-blue-900/90" },
-    { name: "Jan West", role: "Endodontist", image: jan, gradient: "from-blue-900/90" },
-    { name: "Nishani Jayasuriya", role: "Periodontist", image: nishani, gradient: "from-blue-900/90" }
-  ];
+// Team member data
+const teamMembers = [
+  {
+    name: "Dentist: Nishani Joyasuriya BDS GDC 82268",
+    image: nishani, // Replace with your actual path
+    bio: `I qualified in 1999 at the Royal London Hospital (Whitechapel) with 1 went there to experience as life in a place that is very multi-racial and a hive of activity.
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoSlide, setIsAutoSlide] = useState(true);
-  const [direction, setDirection] = useState(0); // 0: right, 1: left
+I am a Dentist who provides NHS and some Private Dentistry. I am particularly interested in preventative Dentistry and Endodontics (Root Canal Treatment).
 
-  // Auto slide for desktop
-  useEffect(() => {
-    if (!isAutoSlide || window.innerWidth < 1024) return;
-    const interval = setInterval(() => {
-      setDirection(0); // Right direction for auto slide
-      setCurrentSlide((prev) => (prev + 1) % Math.ceil(teamMembers.length / 3));
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [isAutoSlide, teamMembers.length]);
+As a mother in the preschool home, abroad play, volunteer in school.
 
-  const nextSlide = () => {
-    setDirection(0); // Right direction
-    if (window.innerWidth < 1024) {
-      setCurrentSlide((prev) => (prev + 1) % teamMembers.length);
-    } else {
-      setCurrentSlide((prev) => (prev + 1) % Math.ceil(teamMembers.length / 3));
-    }
-    setIsAutoSlide(false);
-  };
+It's always been my passion to restore people's teeth and ensure that they are fit and healthy with no underlying chronic infections and my experience covers 15 years as a Dentist.
 
-  const prevSlide = () => {
-    setDirection(1); // Left direction
-    if (window.innerWidth < 1024) {
-      setCurrentSlide((prev) => (prev - 1 + teamMembers.length) % teamMembers.length);
-    } else {
-      setCurrentSlide((prev) => (prev - 1 + Math.ceil(teamMembers.length / 3)) % Math.ceil(teamMembers.length / 3));
-    }
-    setIsAutoSlide(false);
-  };
+I adore the countryside, I love to go cycling and really need to take part in charitable events. I like sewing and watching the occasional good box set!
 
-  const goToSlide = (index) => {
-    setDirection(index > currentSlide ? 0 : 1);
-    setCurrentSlide(index);
-    setIsAutoSlide(false);
-  };
+I adore kids and would love to go visit places like The Eden Project and Capability Browns parks! I absolutely love my work with kids. I trained it well when my preschool children were involved and look forward to restoring oral health in the NHS!`
+  },
+  
+  {
+    name: "Dentist: Ajay Mathur BSc BDS (Lond) 2003, MJDF RCS (Eng) 2010 GDC 82275",
+    image: ajay, // Replace with your actual path
+    bio: `I graduated from King's College London in 2003 and also have an intercalated degree in Pharmacology.
 
-  const getCurrentMembers = () => {
-    if (window.innerWidth < 1024) {
-      // Mobile: single card per slide
-      return [teamMembers[currentSlide]];
-    } else {
-      // Desktop: 3 cards per slide
-      const startIndex = currentSlide * 3;
-      return teamMembers.slice(startIndex, startIndex + 3);
-    }
-  };
+I completed the Vocational Training Scheme in 2004, and went on to undertake a very wide spectrum of dentistry in both the NHS and Private sector in the UK and Channel Islands.
 
-  const totalSlides = window.innerWidth < 1024 ? teamMembers.length : Math.ceil(teamMembers.length / 3);
+I have worked in practices in Surrey, Wales and Devon and have studied extensively in the fields of restorative dentistry, in Essex, Surrey, Birmingham and Harley Street, London. I also studied periodontology in Singapore as a Guest Student of The National University of Singapore, Dental Faculty.
 
-  // Animation variants for smooth transitions
-  const slideVariants = {
-    enter: (direction) => ({
-      x: direction === 0 ? 300 : -300,
-      opacity: 0
-    }),
-    center: {
-      x: 0,
-      opacity: 1
-    },
-    exit: (direction) => ({
-      x: direction === 0 ? -300 : 300,
-      opacity: 0
-    })
-  };
+In addition to general dentistry, I have a special interest in surgery and have undertaken surgical training at Guy's Hospital, London. I have also been trained in Invisalign treatment and carried out further training courses specializing in this.
 
-  const desktopVariants = {
-    enter: {
-      opacity: 0,
-      y: 20
-    },
-    center: {
-      opacity: 1,
-      y: 0
-    },
-    exit: {
-      opacity: 0,
-      y: -20
-    }
-  };
+I have been working at The Pantiles Dental Practice since 2011 and I thoroughly enjoy the team environment and the great balance of doing dentistry using good quality materials, all whilst providing the care you deserve.
 
+Outside work I love spending time with my family and enjoy watching cricket, listening to and playing music.`
+  },
+  {
+    name: "Dentist: Deepam Patel BDS, MFGDP(UK), DipImpDent RCS(Eng), GradDipClinDent (Dentistry) GDC 80980",
+    image: deepam, // Replace with your actual path
+    bio: `Deepam Patel BSc(Hons), BDS(Hons), MJDF(RCS Eng), DipImpDentRCS(Eng), MSc(Lond), MRD(RCS Eng)
+
+Deepam qualified with Honours from Kings College London in 1996 and later obtained a Masters degree in Restorative Dentistry from Guy's College of Kings College London in 2010.
+
+He undertook further postgraduate training in Periodontology at the Eastman Dental Institute and additionally has Membership of the Royal College of Surgeons England in General Dentistry and a Diploma in Implant Dentistry.
+
+He joined this practice in 1998 and has led the Implant provision at our practice since 2006. With over 20 years of dedicated experience in placing and restoring implants, he utilizes the latest digital technology.
+
+His passion for excellence and attention to detail along with over 23 years of experience in general and cosmetic dentistry has earned him a well deserved reputation.
+
+His dedication to providing high class care has resulted in him being chosen to lead the team of dentists at this practice who will provide you or your loved ones the very highest standard of care.`
+  },
+  {
+    name: "Practice Manager: Heliyan Peris",
+    image: heliyan, // Replace with your actual path
+    bio: `I joined the great team here at The Pantiles Dental practice in march 2018.
+
+I am with the team to ensure the smooth running of the practice, providing support to both you, the patients and the team, ensuring the practice runs smoothly and all regulations are adhered to.
+
+In addition to our exceptional team, I am here to make you feel welcome and ensure that you are satisfied with our service. Please do not hesitate to ask if there's anything you would like to know.
+
+When I am not at the practice, I am a proud mum to two boys. I enjoy spending time with my family, friends and traveling.`
+  },
+  {
+    name: "Hygienist: Jan West EDH GDC 1949",
+    image: jan, // Replace with your actual path
+    bio: `I qualified as a Dental Hygienist from Guy's Hospital University of London in 1983 and my career in dentistry started when I trained as a Dental Nurse in 1973. In that time I have worked both in General Dental Practice and Hospital.
+
+I look closely with each dentist to ensure that every patient of oral hygiene is properly planned and delivered.
+
+I love being part of this team and working here amongst so many inspiring and dedicated people.`
+  },
+  {
+    name: "Dental Nurse: Anastasia Mamaja GDC 304290",
+    image: anastasia, // Replace with your actual path
+    bio: `Hi! I started at The Pantiles in June 2021, and I'm training to become a fully qualified Dental Nurse through Surrey Adult Learning (AALL). Even though I'm new to the field, I really enjoy it!
+
+I have one cat called Callie who never stops demanding treats and a play session. In my spare time, I love going on walks with my little friend, dancing, playing games and binge watching movies.
+
+When I'm not working, I enjoy spending time with my friends, exploring new places and trying new foods outside.
+
+I am open-minded, a huge part of what I do is centring for the skilled dental nurse team that we have.`
+  },
+  {
+    name: "Dental Nurse: Zoe Ann Allen GDC 147274",
+    image: zoe, // Replace with your actual path
+    bio: `I joined this practice in 2007 after over 20 years of experience in the dental profession. My career in dentistry started in 1987 when I trained as a Dental Nurse at Musgrove Park Hospital Lyme Regis Surgery.
+
+My husband and I have two children.
+
+In my spare time I enjoy gardening, music, cross stitch and organising events for local village and visiting other churches.`
+  },
+  {
+    name: "Receptionist/ Dental Nurse: Claire Overend",
+    image: claire, // Replace with your actual path
+    bio: `I started working for The Pantiles Dental in 2006 and can't believe how quickly the time has gone.
+
+In my spare time, I love spending time with my kids, my children, family and friends and I have 2 dogs who I love taking out on walks.
+
+I love working in such a happy environment with a wonderful team.`
+  }
+];
+
+export default function DentalExpertsPage() {
   return (
-    <div className="min-h-screen">
-      <Header />
-
-      {/* HERO */}
-      <section
-        className="relative pt-32 sm:pt-44 pb-16 sm:pb-24 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${aboutHeroImage})`, minHeight: '400px' }}
-      >
-        <div className="absolute inset-0 bg-white/10"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-              About Us
-            </h1>
-            <p className="text-base sm:text-lg text-gray-800 leading-relaxed mb-4">
-              Our Team Of Specialists, Dentists, Hygienists And Therapists In Billericay, Essex, Offer An Extensive Range Of Dental Treatments.
-            </p>
-            <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
-              We Aim To Provide Total Dental Care All Under One Roof For Your Convenience And Offer Early/Late/Weekend Appointments.
+    <div className="min-h-screen ">
+      
+      {/* Hero Section */}
+      <section className="relative h-[700px] bg-cover bg-center" style={{ backgroundImage: `url(${dentalexperts})` }}>
+         <Header />
+        
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+        <div className="relative container mx-auto px-4 h-full flex items-center">
+          <div className="max-w-2xl text-white">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4">Our Dental <br></br>Experts</h1>
+            <p className="text-xl md:text-2xl font-medium">
+              Our Team of Specialists, Dentists, Hygienists And Therapists in Bletchingley. 
+              Offer an Extensive Range of Dental Treatments.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-[#223B6E] mb-10 sm:mb-16">
-            WHY CHOOSE US?
-          </h2>
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
-            <div className="lg:w-1/2">
-              <img src={Dentist} alt="Dentist" className="w-full rounded-lg shadow-xl" />
-            </div>
-            <div className="lg:w-1/2">
-              <ul className="space-y-4 text-base sm:text-lg text-gray-700">
-                {[
-                  "Experienced and a Friendly Team",
-                  "A full discussion of your dental care",
-                  "We offer same day emergency appointments",
-                  "Nervous patients are welcome",
-                  "Denplan Excel Accredited (Quality Assurance)",
-                  "Wide range of treatment options",
-                  "Disabled access all on the ground floor"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <span className="text-2xl text-blue-600 mt-1">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TEAM SECTION */}
-      <section className="py-16 sm:py-20 bg-[#223B6E] text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10 sm:mb-16">
-            Meet The Team Behind the Smile
-          </h2>
-
-          <div className="relative max-w-7xl mx-auto">
-            {/* Mobile Slider */}
-            <div className="lg:hidden">
-              <div className="relative overflow-hidden h-96">
-                <AnimatePresence mode="popLayout" custom={direction}>
-                  <motion.div
-                    key={currentSlide}
-                    custom={direction}
-                    variants={slideVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{
-                      x: { type: "spring", stiffness: 300, damping: 30 },
-                      opacity: { duration: 0.2 }
+       {/* Team Members Section */}
+      {teamMembers.map((member, index) => (
+        <section key={index} className={`py-16 px-4 ${index % 2 === 0 ? 'bg-white' : 'bg-blue-100'}`}>
+          <div className="container mx-auto max-w-6xl">
+            <div className="flex flex-col md:flex-row gap-8 mb-16">
+              {/* Image */}
+              <div className="md:w-1/3">
+                <div className="w-full aspect-[3/4] bg-gray-200 rounded-lg overflow-hidden">
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-gray-400 text-6xl">👤</div>';
                     }}
-                    className="absolute inset-0 flex justify-center"
-                  >
-                    <div className="w-80 sm:w-72 mx-auto">
-                      <div className="relative overflow-hidden rounded-lg shadow-xl  p-4 flex items-center justify-center h-80">
-                        <img 
-                          src={getCurrentMembers()[0].image} 
-                          alt={getCurrentMembers()[0].name} 
-                          className="max-h-72 w-full object-contain"
-                        />
-                        <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t ${getCurrentMembers()[0].gradient} to-transparent p-4 sm:p-6`}>
-                          <h3 className="text-lg sm:text-xl font-bold">{getCurrentMembers()[0].name}</h3>
-                          <p className="text-sm sm:text-base text-gray-200">{getCurrentMembers()[0].role}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-            </div>
-
-            {/* Desktop Grid */}
-            <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              <AnimatePresence mode="popLayout">
-                {getCurrentMembers().map((member, index) => (
-                  <motion.div
-                    key={`${currentSlide}-${index}`}
-                    variants={desktopVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{
-                      duration: 0.4,
-                      delay: index * 0.1
-                    }}
-                    className="group"
-                  >
-                    <div className="relative overflow-hidden rounded-lg   p-4 flex items-center justify-center h-80">
-                      <img 
-                        src={member.image} 
-                        alt={member.name} 
-                        className="max-h-72 w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                      />
-                      <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t ${member.gradient} to-transparent p-4 sm:p-6`}>
-                        <h3 className="text-lg font-bold">{member.name}</h3>
-                        <p className="text-sm text-gray-200">{member.role}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-
-            {/* Arrows + Pagination */}
-            <div className="flex justify-center items-center gap-4 sm:gap-6 mt-8">
-              <button 
-                onClick={prevSlide} 
-                className="p-2 sm:p-3 rounded-full bg-white/20 hover:bg-white/30 transition-all duration-300 hover:scale-110"
-              >
-                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </button>
-
-              <div className="flex gap-1 sm:gap-2">
-                {Array.from({ length: totalSlides }).map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => goToSlide(index)}
-                    className={`w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full transition-all duration-300 ${
-                      index === currentSlide ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/75'
-                    }`}
                   />
-                ))}
+                </div>
               </div>
 
-              <button 
-                onClick={nextSlide} 
-                className="p-2 sm:p-3 rounded-full bg-white/20 hover:bg-white/30 transition-all duration-300 hover:scale-110"
-              >
-                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </button>
+              {/* Content */}
+              <div className="md:w-2/3">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+                  {member.name}
+                </h2>
+                <div className="text-gray-700 leading-relaxed space-y-4">
+                  {member.bio.split('\n\n').map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* READY TO EXPERIENCE */}
-      <section className="py-16 sm:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12 max-w-5xl mx-auto">
-            <div className="lg:w-1/2 text-center lg:text-left">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                Ready To Experience Better Dental Care?
-              </h3>
-              <p className="text-base sm:text-lg text-gray-700 mb-6">
-                Schedule Your Visit Today And Take The First Step Toward A Healthier, Brighter Smile.
-              </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 sm:px-8 rounded-lg transition duration-300">
-                Book Now
-              </button>
-            </div>
-
-            <div className="lg:w-1/2 w-full">
-              <img
-                src={happyclient4}
-                alt="Happy patient"
-                className="w-full rounded-lg shadow-xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       <Footer />
     </div>
   );
-};
+}
 
 export default About;

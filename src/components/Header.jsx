@@ -1,27 +1,31 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../assets/logo.png';   // optional
+                
 
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Fees', href: '/fees' },
-  { label: 'Special Offers', href: '/offers' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'Special Offers', href: '/special-offers' },
+  { label: 'Contact Us', href: '/contact-us' },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [servicesDropdown, setServicesDropdown] = useState(false);
 
   return (
     <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1600px]  ">
       <div className="w-full h-[60px] flex items-center justify-between px-4 md:px-8 bg-white/50 backdrop-blur-md shadow-lg rounded-3xl md:rounded-[2rem]">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 text-lg md:text-xl font-bold text-black z-50">
-          <img src={logo} alt="Logo" className="w-10 h-10 md:w-20 md:h-10" />
-        </Link>
+        <a href="#home" className="flex items-center gap-2 text-xl font-bold text-black">
+          <img src={logo} alt="Logo" className="h-10" />
+          <span className="text-lg md:text-xl font-bold text-[#223B6E]">15 The Pantiles</span>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-12 text-black font-sans">
@@ -29,14 +33,14 @@ export default function Header() {
             <Link
               key={l.label}
               to={l.href}
-              className="font-bold hover:text-green-900 transition text-sm xl:text-base"
+              className="font-bold hover:text-black transition"
             >
               {l.label}
             </Link>
           ))}
           <a
             href="#book"
-            className="ml-2 xl:ml-4 bg-[#223B6E] text-white px-6 xl:px-8 py-2 rounded-full hover:bg-blue-900 transition font-bold text-sm xl:text-base whitespace-nowrap"
+            className="ml-4 bg-[#223B6E] text-white px-15 py-2 rounded-full hover:bg-blue-900 transition font-bold"
           >
             Book Now
           </a>
@@ -53,34 +57,39 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`lg:hidden absolute top-full left-0 right-0 mt-2 overflow-hidden bg-white/95 backdrop-blur-md rounded-2xl shadow-xl transition-all duration-300 ease-in-out ${
-          open ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <ul className="flex flex-col gap-1 px-4 py-4 text-[#223B6E]">
-          {navLinks.map((l) => (
-            <li key={l.label}>
-              <Link
-                to={l.href}
-                onClick={() => setOpen(false)}
-                className="block py-3 px-4 font-semibold hover:bg-blue-50 rounded-lg transition"
-              >
-                {l.label}
-              </Link>
-            </li>
-          ))}
-          <li className="mt-2">
-            <a
-              href="#book"
-              onClick={() => setOpen(false)}
-              className="block w-full text-center bg-[#223B6E] text-white px-5 py-3 rounded-full hover:bg-blue-900 transition font-bold"
-            >
-              Book Now
-            </a>
-          </li>
-        </ul>
-      </div>
+      <AnimatePresence>
+        {open && (
+          <motion.nav
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="lg:hidden mt-2 overflow-hidden bg-[#1E3A8A]/90 backdrop-blur-md rounded-2xl"
+          >
+            <ul className="flex flex-col gap-2 px-6 py-4 text-white">
+              {navLinks.map((l) => (
+                <li key={l.label}>
+                  <Link
+                    to={l.href}
+                    onClick={() => setOpen(false)}
+                    className="block py-2 font-medium hover:text-gray-300 transition"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a
+                  href="#book"
+                  onClick={() => setOpen(false)}
+                  className="mt-2 inline-block w-full text-center bg-blue-900 text-white px-5 py-2 rounded-full hover:bg-blue-800 transition"
+                >
+                  Book Now
+                </a>
+              </li>
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
