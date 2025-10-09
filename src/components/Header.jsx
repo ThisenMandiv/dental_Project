@@ -12,6 +12,7 @@ const navLinks = [
   { label: 'Fees', href: '/fees' },
   { label: 'Special Offers', href: '/special-offers' },
   { label: 'Contact Us', href: '/contact-us' },
+  { label: 'Team', href: '/team' },
 ];
 
 export default function Header() {
@@ -19,7 +20,7 @@ export default function Header() {
   const location = useLocation();
 
   return (
-    <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1600px]">
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1600px]">
       <div className="w-full h-[60px] flex items-center justify-between px-4 md:px-8 bg-white/50 backdrop-blur-md shadow-lg rounded-3xl md:rounded-[2rem]">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 text-xl font-bold text-black">
@@ -65,7 +66,7 @@ export default function Header() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden mt-2 overflow-hidden bg-[#1E3A8A]/90 backdrop-blur-md rounded-2xl"
+            className="lg:hidden  overflow-hidden bg-[#1E3A8A]/90 backdrop-blur-md rounded-2xl"
           >
             <ul className="flex flex-col gap-2 px-6 py-4 text-white">
               {navLinks.map((l) => (

@@ -157,7 +157,7 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1 h-3 bg-white rounded-full mt-2"
+            className="w-1 h-3 bg-white rounded-full "
           ></motion.div>
         </div>
       </motion.div>
