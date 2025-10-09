@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -18,16 +19,16 @@ import claire from '../assets/claire.png';
 import happyclient4 from '../assets/happyclient4.jpg';
 
 const About = () => {
-  const teamMembers = [
-    { name: "Zoe Ann Allen", role: "Dental Nurse", image: zoe, gradient: "from-blue-900/90" },
-    { name: "Ajay Mathur", role: "Dentist", image: ajay, gradient: "from-blue-900/90" },
-    { name: "Deepam Patel", role: "Dentist", image: deepam, gradient: "from-blue-900/90"},
-    { name: "Heliyan Peiris", role: "Practice Manager", image: heliyan, gradient: "from-blue-900/90"},
-    { name: "Anastasija Mamaja", role: "Dental Hygienist", image: anastasia, gradient: "from-blue-900/90"},
-    { name: "Ann Marie", role: "Receptionist", image: annmarie, gradient: "from-blue-900/90" },
-    { name: "Claire Overend", role: "Orthodontist", image: claire, gradient: "from-blue-900/90"},
-    { name: "Jan West", role: "Endodontist", image: jan, gradient: "from-blue-900/90" },
-    { name: "Nishani Jayasuriya", role: "Periodontist", image: nishani, gradient: "from-blue-900/90" }
+const teamMembers = [
+    { name: "Zoe Ann Allen", slug: "Zoe-Ann-Allen", role: "Dental Nurse", image: zoe, gradient: "from-blue-900/90" },
+    { name: "Ajay Mathur", slug: "Ajay-Mathur", role: "Dentist", image: ajay, gradient: "from-blue-900/90" },
+    { name: "Deepam Patel", slug: "Deepam-Patel", role: "Dentist", image: deepam, gradient: "from-blue-900/90"},
+    { name: "Heliyan Peiris", slug: "Heliyan-Peiris", role: "Practice Manager", image: heliyan, gradient: "from-blue-900/90"},
+    { name: "Anastasija Mamaja", slug: "Anastasija-Mamaja", role: "Dental Hygienist", image: anastasia, gradient: "from-blue-900/90"},
+    { name: "Ann Marie", slug: "Ann-Marie", role: "Receptionist", image: annmarie, gradient: "from-blue-900/90" },
+    { name: "Claire Overend", slug: "Claire-Overend", role: "Orthodontist", image: claire, gradient: "from-blue-900/90"},
+    { name: "Jan West", slug: "Jan-West", role: "Endodontist", image: jan, gradient: "from-blue-900/90" },
+    { name: "Nishani Jayasuriya", slug: "Nishani-Jayasuriya", role: "Periodontist", image: nishani, gradient: "from-blue-900/90" }
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -230,17 +231,19 @@ const About = () => {
                     }}
                     className="group"
                   >
-                    <div className="relative overflow-hidden rounded-lg   p-4 flex items-center justify-center h-100">
-                      <img 
-                        src={member.image} 
-                        alt={member.name} 
-                        className="max-h-100 w-full object-contain transition-transform duration-300 group-hover:scale-105"
-                      />
-                      <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t ${member.gradient} to-transparent p-4 sm:p-6`}>
-                        <h3 className="text-lg font-bold">{member.name}</h3>
-                        <p className="text-sm text-gray-200">{member.role}</p>
+                    <Link to={`/team#${member.slug}`}>
+                      <div className="relative overflow-hidden rounded-lg   p-4 flex items-center justify-center h-100">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="max-h-100 w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t ${member.gradient} to-transparent p-4 sm:p-6`}>
+                          <h3 className="text-lg font-bold">{member.name}</h3>
+                          <p className="text-sm text-gray-200">{member.role}</p>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </motion.div>
                 ))}
               </AnimatePresence>
