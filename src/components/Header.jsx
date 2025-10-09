@@ -1,57 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo.png';   // optional
-
+                
 
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
-  {
-    label: 'Services',
-    href: '/services',
-    dropdown: [
-      {
-        label: 'General Dentistry',
-        href: '/services/general-dentistry',
-        description: 'Routine check-ups, fillings, and essential treatments'
-      },
-      {
-        label: 'Cosmetic Dentistry',
-        href: '/services/cosmetic-dentistry',
-        description: 'Teeth whitening, veneers, and smile makeovers'
-      },
-      {
-        label: 'Facial Aesthetics',
-        href: '/services/facial-aesthetics',
-        description: 'Anti-wrinkle treatments and dermal fillers'
-      },
-      {
-        label: 'Denplan Care',
-        href: '/services/denplan-care',
-        description: 'Monthly payment plans for regular dental care'
-      },
-      {
-        label: 'Specialist Treatment',
-        href: '/services/specialist-treatment',
-        description: 'Root canals, implants, and complex procedures'
-      },
-      {
-        label: 'NHS Services',
-        href: '/services/nhs',
-        description: 'NHS dental services for eligible patients'
-      },
-      {
-        label: 'Emergency Dental',
-        href: '/services/emergency-dental',
-        description: 'Same-day emergency appointments'
-      }
-    ]
-  },
+  { label: 'Services', href: '/services' },
   { label: 'Fees', href: '/fees' },
-  { label: 'Special Offers', href: '/offers' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'Special Offers', href: '/special-offers' },
+  { label: 'Contact Us', href: '/contact-us' },
 ];
 
 export default function Header() {
@@ -59,73 +19,36 @@ export default function Header() {
   const [servicesDropdown, setServicesDropdown] = useState(false);
 
   return (
-    <header
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50"
-      style={{ width: 1100, height: 60 }}            /* exact Figma dims */
-    >
-      <div className="w-full h-full flex items-center justify-between px-8 bg-[#FFFFFF]/48 backdrop-blur-md shadow-lg rounded-[2rem]">
+    <header className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1600px]  ">
+      <div className="w-full h-[60px] flex items-center justify-between px-4 md:px-8 bg-white/50 backdrop-blur-md shadow-lg rounded-3xl md:rounded-[2rem]">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 text-xl font-bold text-black">
+        <a href="#home" className="flex items-center gap-2 text-xl font-bold text-black">
           <img src={logo} alt="Logo" className="h-10" />
-          
-        </Link>
+          <span className="text-lg md:text-xl font-bold text-[#223B6E]">15 The Pantiles</span>
+        </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-12 text-black">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-12 text-black font-sans">
           {navLinks.map((l) => (
-            l.dropdown ? (
-              <div
-                key={l.label}
-                className="relative"
-                onMouseEnter={() => setServicesDropdown(true)}
-                onMouseLeave={() => setServicesDropdown(false)}
-              >
-                <button className="flex items-center gap-1 font-bold hover:text-black transition">
-                  {l.label}
-                  <ChevronDown size={16} />
-                </button>
-                <AnimatePresence>
-                  {servicesDropdown && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 py-4 z-50"
-                    >
-                      {l.dropdown.map((item) => (
-                        <Link
-                          key={item.href}
-                          to={item.href}
-                          className="block px-6 py-3 hover:bg-gray-50 transition-colors"
-                        >
-                          <div className="font-semibold text-gray-800">{item.label}</div>
-                          <div className="text-sm text-gray-600 mt-1">{item.description}</div>
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ) : (
-              <Link
-                key={l.label}
-                to={l.href}
-                className="font-bold hover:text-black transition"
-              >
-                {l.label}
-              </Link>
-            )
+            <Link
+              key={l.label}
+              to={l.href}
+              className="font-bold hover:text-black transition"
+            >
+              {l.label}
+            </Link>
           ))}
-          <button
+          <a
+            href="#book"
             className="ml-4 bg-[#223B6E] text-white px-15 py-2 rounded-full hover:bg-blue-900 transition font-bold"
           >
             Book Now
-          </button>
+          </a>
         </nav>
 
         {/* Mobile Burger */}
         <button
-          className="lg:hidden text-white"
+          className="lg:hidden text-[#223B6E] z-50 p-2"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -155,12 +78,13 @@ export default function Header() {
                 </li>
               ))}
               <li>
-                <button
+                <a
+                  href="#book"
                   onClick={() => setOpen(false)}
                   className="mt-2 inline-block w-full text-center bg-blue-900 text-white px-5 py-2 rounded-full hover:bg-blue-800 transition"
                 >
                   Book Now
-                </button>
+                </a>
               </li>
             </ul>
           </motion.nav>

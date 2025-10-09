@@ -4,6 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import happyClients1 from '../assets/happyclient1.png';
+import happyClients2 from '../assets/happyclient2.png';
+import happyClients3 from '../assets/happyclient3.png';
+
 
 const testimonials = [
   {
@@ -12,7 +16,7 @@ const testimonials = [
     name: 'Stella Herman',
     location: 'Macejkovicbury',
     avatarUrl: 'https://picsum.photos/seed/stella/100/100',
-    imageUrl: 'https://picsum.photos/seed/t1/400/300',
+    imageUrl: happyClients1,
   },
   {
     title: 'Gentle and Caring',
@@ -20,7 +24,7 @@ const testimonials = [
     name: 'Beulah Mertz',
     location: 'Chelsieshire',
     avatarUrl: 'https://picsum.photos/seed/beulah/100/100',
-    imageUrl: 'https://picsum.photos/seed/t2/400/300',
+    imageUrl: happyClients2,
   },
   {
     title: 'A Wonderful Experience',
@@ -28,16 +32,9 @@ const testimonials = [
     name: 'Wilfred Jerde',
     location: 'Wisokytown',
     avatarUrl: 'https://picsum.photos/seed/wilfred/100/100',
-    imageUrl: 'https://picsum.photos/seed/t3/400/300',
+    imageUrl: happyClients3,
   },
-  {
-    title: 'Top-Notch Service',
-    quote: 'The level of care and professionalism here is unmatched. I always feel comfortable and well-cared for.',
-    name: 'Jane Doe',
-    location: 'Anytown',
-    avatarUrl: 'https://picsum.photos/seed/jane/100/100',
-    imageUrl: 'https://picsum.photos/seed/t4/400/300',
-  },
+
 ];
 
 const Testimonials = () => {
