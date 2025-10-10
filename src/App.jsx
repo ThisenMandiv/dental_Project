@@ -6,15 +6,17 @@ import SpecialOffersPage from './pages/SpecialOffersPage';
 import ContactUsPage from './pages/ContactUsPage';
 import Fees from './pages/Fees';         // if you have this page
 import Header from './components/Header';
-import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import ScrollToAnchor from './components/ScrollToAnchor';
 import './App.css';
 import Team from './pages/Team';
+import EventsPage from './pages/EventsPage';
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <ScrollToAnchor />
       <Header />
 
       <div>
@@ -27,9 +29,9 @@ function App() {
           <Route path="/special-offers" element={<SpecialOffersPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/events" element={<EventsPage />} />
         </Routes>
       </div>
-
     </Router>
   );
 }

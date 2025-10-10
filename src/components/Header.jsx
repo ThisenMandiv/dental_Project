@@ -37,12 +37,15 @@ const servicesDropdown = [
 ];
 
 const aboutDropdown = [
-  { label: "Meet The Team", href: "/team" },
+  { label: "Meet The Team", href: "/meet-the-team" },
   { label: "Testimonials", href: "/testimonials" },
   {
     label: "Events",
     href: "/events",
-    subItems: ["Sugar Free September", "Stoptober"],
+    subItems: [
+      { label: "Sugar Free September", href: "/events#sugar-free-september" },
+      { label: "Stoptober", href: "/events#stoptober" },
+    ],
   },
 ];
 
@@ -171,12 +174,17 @@ export default function Header() {
                                   >
                                     <div className="py-2">
                                       {item.subItems.map((subItem) => (
-                                        <div
-                                          key={subItem}
-                                          className="px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#223B6E] transition-colors cursor-pointer"
+                                        <Link
+                                          to={subItem.href}
+                                          key={subItem.label}
+                                          className="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#223B6E] transition-colors cursor-pointer"
+                                          onClick={() => {
+                                            setActiveDropdown(null);
+                                            setActiveSubDropdown(null);
+                                          }}
                                         >
-                                          {subItem}
-                                        </div>
+                                          {subItem.label}
+                                        </Link>
                                       ))}
                                     </div>
                                   </motion.div>
@@ -274,13 +282,14 @@ export default function Header() {
                                 {item.subItems && (
                                   <div className="ml-3 sm:ml-4 border-l border-gray-200 pl-3 sm:pl-4 mt-1">
                                     {item.subItems.map((subItem) => (
-                                      <div
-                                        key={subItem}
-                                        className="py-1.5 text-gray-600 hover:text-[#223B6E] text-xs sm:text-sm cursor-pointer transition"
+                                      <Link
+                                        to={subItem.href}
+                                        key={subItem.label}
+                                        className="block py-1.5 text-gray-600 hover:text-[#223B6E] text-xs sm:text-sm cursor-pointer transition"
                                         onClick={closeMobileMenu}
                                       >
-                                        {subItem}
-                                      </div>
+                                        {subItem.label}
+                                      </Link>
                                     ))}
                                   </div>
                                 )}
