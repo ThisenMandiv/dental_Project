@@ -8,20 +8,26 @@ const servicesDropdown = [
   {
     label: "General Dentistry",
     href: "/general-dentistry",
-    subItems: [
-      "Dental Examination",
-      "Fillings and Restorations",
-      "Dentures",
-      "Dental Crowns and Bridges",
-      "Dental Hygienist",
-      "Root Canal Treatment",
-      "Dental Extraction",
-    ],
+   subItems: [
+  { label: "Dental Examination", href: "/general-dentistry#dental-examination" },
+  { label: "Fillings and Restorations", href: "/general-dentistry#fillings" },
+  { label: "Dentures", href: "/general-dentistry#dentures" },
+  { label: "Dental Crowns and Bridges", href: "/general-dentistry#crowns-bridges" },
+  { label: "Dental Hygienist", href: "/general-dentistry#hygienist" },
+  { label: "Root Canal Treatment", href: "/general-dentistry#root-canal" },
+  { label: "Dental Extraction", href: "/general-dentistry#extraction" },
+],
+
   },
   {
     label: "Cosmetic Dentistry",
     href: "/cosmetic-dentistry",
-    subItems: ["Veneers", "Composite Bonding", "Dental Implants", "Tooth Whitening"],
+    subItems: [
+      { label: "Veneers", href: "/cosmetic-dentistry#veneers" },
+      { label: "Composite Bonding", href: "/cosmetic-dentistry#composite-bonding" },
+      { label: "Dental Implants", href: "/cosmetic-dentistry#dental-implants" },
+      { label: "Tooth Whitening", href: "/cosmetic-dentistry#tooth-whitening" },
+    ],
   },
   { label: "Facial Aesthetics", href: "/facial-aesthetics" },
   { label: "Denplan Care", href: "/denplan-care" },
@@ -29,15 +35,17 @@ const servicesDropdown = [
   {
     label: "Specialist Treatment",
     href: "/specialist-treatment",
-    subItems: ["Invisalign"],
+    subItems: [
+       { label: "Sedation Dentist", href: "/sedation-dentist#sedation-dentist" },
+    ],
   },
   { label: "NHS", href: "/nhs" },
   { label: "Emergency Dental Treatment", href: "/emergency-dental-treatment" },
-  { label: "Sedation Dentist", href: "/sedation-dentist" },
+ 
 ];
 
 const aboutDropdown = [
-  { label: "Meet The Team", href: "/meet-the-team" },
+  { label: "Meet The Team", href: "/team" },
   { label: "Testimonials", href: "/testimonials" },
   {
     label: "Events",

@@ -11,6 +11,8 @@ import ScrollToAnchor from './components/ScrollToAnchor';
 import './App.css';
 import Team from './pages/Team';
 import EventsPage from './pages/EventsPage';
+import GeneralDentistry from './pages/GeneralDentistry';
+
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUsPage />} />
           <Route path="/team" element={<Team />} />
           <Route path="/events" element={<EventsPage />} />
+          <Route path="general-dentistry" element={<GeneralDentistry/>} />
         </Routes>
       </div>
     </Router>
