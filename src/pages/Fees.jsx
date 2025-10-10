@@ -58,19 +58,19 @@ const FeesPage = () => {
 
       {/* Hero Section */}
       <section
-  className="relative mt-0 h-[350px] md:h-[800px] bg-cover bg-center"
+  className="relative mt-0 h-[350px] md:h-[700px] bg-cover bg-center"
   style={{ backgroundImage: `url(${feesHero})` }}
 >
   {/* Black overlay */}
-  <div className="absolute inset-0 bg-black opacity-20 z-0"></div>
+  <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
 
   {/* Content wrapper */}
   <div className="relative container mx-auto px-4 h-full flex items-center z-10">
     <div className="max-w-2xl text-center md:text-left">
-      <h1 className="text-3xl md:text-6xl font-bold text-gray-900 mb-4">
+      <h1 className="text-3xl md:text-6xl font-bold text-gray-100 mb-4">
         Our Price Packages
       </h1>
-      <p className="text-lg md:text-3xl text-gray-900">
+      <p className="text-lg md:text-3xl text-gray-100">
         Book Your Hygienist Appointment With Our Lovely And Experienced Hygienist For A Pearly White Smile.
       </p>
     </div>

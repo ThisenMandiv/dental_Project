@@ -37,7 +37,7 @@ const servicesDropdown = [
 ];
 
 const aboutDropdown = [
-  { label: "Meet The Team", href: "/meet-the-team" },
+  { label: "Meet The Team", href: "/team" },
   { label: "Testimonials", href: "/testimonials" },
   {
     label: "Events",
@@ -114,13 +114,14 @@ export default function Header() {
                     setActiveSubDropdown(null);
                   }}
                 >
-                  <span
+                  <Link
+                    to={link.href}
                     className={`font-bold hover:text-[#223B6E] transition ${
                       location.pathname === link.href ? "text-[#223B6E]" : ""
                     }`}
                   >
                     {link.label}
-                  </span>
+                  </Link>
                   <ChevronDown
                     size={16}
                     className="transition-transform group-hover:rotate-180"
@@ -241,7 +242,9 @@ export default function Header() {
                           )
                         }
                       >
-                        <span>{link.label}</span>
+                        <Link to={link.href} onClick={closeMobileMenu}>
+                          {link.label}
+                        </Link>
                         <ChevronDown
                           size={16}
                           className={`transition-transform ${
