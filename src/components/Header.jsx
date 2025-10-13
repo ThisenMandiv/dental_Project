@@ -9,7 +9,7 @@ const servicesDropdown = [
     label: "General Dentistry",
     href: "/general-dentistry",
    subItems: [
-  { label: "Dental Examination", href: "/general-dentistry#dental-examination" },
+  { label: "Dental Examination", href: "/general-dentistry/dental-examinations" },
   { label: "Fillings and Restorations", href: "/general-dentistry#fillings" },
   { label: "Dentures", href: "/general-dentistry#dentures" },
   { label: "Dental Crowns and Bridges", href: "/general-dentistry#crowns-bridges" },
@@ -66,7 +66,7 @@ const navLinks = [
   },
   {
     label: "Services",
-    href: "/services",
+    href: "/home",
     dropdown: servicesDropdown,
   },
   { label: "Fees", href: "/fees" },

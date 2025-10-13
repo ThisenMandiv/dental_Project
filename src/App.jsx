@@ -12,6 +12,8 @@ import './App.css';
 import Team from './pages/Team';
 import EventsPage from './pages/EventsPage';
 import GeneralDentistry from './pages/GeneralDentistry';
+import Testimonials from './pages/Testimonials';
+import DentalExaminationsPage from './pages/DentalExaminationsPage';
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="general-dentistry" element={<GeneralDentistry/>} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/general-dentistry/dental-examinations" element={<DentalExaminationsPage />} />
         </Routes>
       </div>
     </Router>

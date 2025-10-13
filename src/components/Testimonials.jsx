@@ -1,43 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import AddTestimonialHome from './AddTestimonialHome';
+import useTestimonialsGSheet from '../hooks/useTestimonialsGSheet';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import 'swiper/css/autoplay';
+import { Pagination, Autoplay } from 'swiper/modules';
 import happyClients1 from '../assets/happyclient1.png';
 import happyClients2 from '../assets/happyclient2.png';
 import happyClients3 from '../assets/happyclient3.png';
 
 
-const testimonials = [
-  {
-    title: 'Highly Recommend',
-    quote: 'I can confidently say they\'re the best! The staff is always welcoming, and Doctors are exceptionally skilled.',
-    name: 'Stella Herman',
-    location: 'Macejkovicbury',
-    avatarUrl: 'https://picsum.photos/seed/stella/100/100',
-    imageUrl: happyClients1,
-  },
-  {
-    title: 'Gentle and Caring',
-    quote: 'I can confidently say they\'re the best! The staff is always welcoming, and Doctors are exceptionally skilled.',
-    name: 'Beulah Mertz',
-    location: 'Chelsieshire',
-    avatarUrl: 'https://picsum.photos/seed/beulah/100/100',
-    imageUrl: happyClients2,
-  },
-  {
-    title: 'A Wonderful Experience',
-    quote: 'I can confidently say they\'re the best! The staff is always welcoming, and Doctors are exceptionally skilled.',
-    name: 'Wilfred Jerde',
-    location: 'Wisokytown',
-    avatarUrl: 'https://picsum.photos/seed/wilfred/100/100',
-    imageUrl: happyClients3,
-  },
-
-];
-
 const Testimonials = () => {
+  const { list: testimonials, add: addTestimonial, loading, error } = useTestimonialsGSheet();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleAddTestimonial = (newTestimonial) => {
+    addTestimonial(newTestimonial);
+    setIsModalOpen(false);
+  };
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -52,9 +35,14 @@ const Testimonials = () => {
         </motion.h2>
         
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           pagination={{ clickable: true }}
           breakpoints={{
             768: {
@@ -112,12 +100,19 @@ const Testimonials = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => setIsModalOpen(true)}
             className="border border-gray-400 text-gray-600 font-semibold py-3 px-8 hover:bg-gray-100 transition-colors"
           >
             ADD TESTIMONIALS
           </motion.button>
         </div>
       </div>
+      {isModalOpen && (
+        <AddTestimonialHome
+          onClose={() => setIsModalOpen(false)}
+          onAddTestimonial={handleAddTestimonial}
+        />
+      )}
     </section>
   );
 };
