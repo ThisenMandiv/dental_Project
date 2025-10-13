@@ -14,6 +14,7 @@ import EventsPage from './pages/EventsPage';
 import GeneralDentistry from './pages/GeneralDentistry';
 import Testimonials from './pages/Testimonials';
 import DentalExaminationsPage from './pages/DentalExaminationsPage';
+import RemovableDenturesPage from './pages/RemovableDenturesPage';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="general-dentistry" element={<GeneralDentistry/>} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/general-dentistry/dental-examinations" element={<DentalExaminationsPage />} />
+          <Route path="/general-dentistry/removable-dentures" element={<RemovableDenturesPage />} />
         </Routes>
       </div>
     </Router>

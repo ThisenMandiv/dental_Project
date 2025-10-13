@@ -11,7 +11,7 @@ href: "/general-dentistry",
 subItems: [
   { label: "Dental Examination", href: "/general-dentistry/dental-examinations" },
   { label: "Fillings and Restorations", href: "/general-dentistry#fillings" },
-  { label: "Dentures", href: "/general-dentistry#dentures" },
+  { label: "Dentures", href: "/general-dentistry/removable-dentures" },
   { label: "Dental Crowns and Bridges", href: "/general-dentistry#crowns-bridges" },
   { label: "Dental Hygienist", href: "/general-dentistry#hygienist" },
   { label: "Root Canal Treatment", href: "/general-dentistry#root-canal" },
