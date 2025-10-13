@@ -90,9 +90,15 @@ const FeesPage = () => {
               <p className="text-gray-700 leading-relaxed mb-6 text-xl md:text-2xl font-medium">
                 Dental Care Is Something We All Require, And We Realise That Whilst Many People Would Like To Benefit From The Treatments Available, Dental Finance Is The Perfect Way To Get The Smile You Have Been Longing For.
               </p>
-              <button className="bg-cyan-400 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition">
-                View More
-              </button>
+              <a
+  href="https://lead.tabeo.co.uk/15-the-pantiles-dental-practice/finance"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-cyan-400 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition">
+     
+  View More
+</a>
+
             </div>
 
             {/* Right Finance Image */}

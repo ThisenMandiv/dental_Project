@@ -69,10 +69,10 @@ const Hero = () => {
                 className="w-full h-full object-cover"
               />
               {/* Enhanced Gradient Overlay - Strong on left, fade to right */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-700/50 to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20"></div>
-              
+              <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/0 via-black/0 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-transparent to-black/00"></div>
+              /
               {/* Slide Content */}
               <div className="absolute inset-0 flex items-center justify-start">
                 <div className="container mx-auto px-4 md:px-8 lg:px-20 relative z-10 w-full">

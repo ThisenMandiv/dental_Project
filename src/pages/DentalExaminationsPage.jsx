@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Search, Activity, Calendar, Sparkles } from 'lucide-react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import dentalexaminationhero from '../assets/Dental_Examination_hero.jpg';
+
+import { useState } from 'react';
 
 export default function DentalExaminationsPage() {
   const [formData, setFormData] = useState({
@@ -13,40 +15,6 @@ export default function DentalExaminationsPage() {
     service: '',
     message: ''
   });
-
-  // Typewriter animation states
-  const [displayedText1, setDisplayedText1] = useState('');
-  const [displayedText2, setDisplayedText2] = useState('');
-  const [currentIndex1, setCurrentIndex1] = useState(0);
-  const [currentIndex2, setCurrentIndex2] = useState(0);
-  const [isTypingComplete1, setIsTypingComplete1] = useState(false);
-
-  const fullText1 = "Dental Examination which is also known as a check-up, allows the dentist to fully evaluate the health of your teeth and gums and to pinpoint any areas of concern, such as early signs of decay, acid erosion or gum disease.";
-  const fullText2 = "Regular examinations allow us to help you to maintain a healthy mouth, teeth and gums. If we are able to identify any issues early it is possible to save a lot of pain, time and money!";
-
-  useEffect(() => {
-    // First paragraph typing
-    if (currentIndex1 < fullText1.length) {
-      const timer = setTimeout(() => {
-        setDisplayedText1(prev => prev + fullText1[currentIndex1]);
-        setCurrentIndex1(prev => prev + 1);
-      }, 20); // Adjust typing speed here (milliseconds)
-      return () => clearTimeout(timer);
-    } else {
-      setIsTypingComplete1(true);
-    }
-  }, [currentIndex1, fullText1]);
-
-  useEffect(() => {
-    // Second paragraph typing starts after first is complete
-    if (isTypingComplete1 && currentIndex2 < fullText2.length) {
-      const timer = setTimeout(() => {
-        setDisplayedText2(prev => prev + fullText2[currentIndex2]);
-        setCurrentIndex2(prev => prev + 1);
-      }, 20); // Adjust typing speed here (milliseconds)
-      return () => clearTimeout(timer);
-    }
-  }, [currentIndex2, fullText2, isTypingComplete1]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -100,50 +68,40 @@ export default function DentalExaminationsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
         <Header />
-   {/* Hero Section - Fixed height */}
+   {/* Hero Section */}
 <section
-  className="relative bg-cover bg-center bg-no-repeat px-6 md:px-20 py-16 md:py-24 text-white"
+  className="relative bg-cover bg-center bg-no-repeat px-6 md:px-20 py-24 md:py-40 text-white flex flex-col justify-center min-h-[400px] md:min-h-[750px]"
   style={{ backgroundImage: `url(${dentalexaminationhero})` }}
 >
-  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/50 via-blue-400/50 to-transparent"></div>
-  <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
-  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20"></div>
+  <div className="absolute inset-0 bg-black/10"></div> {/* Optional overlay */}
   
-  {/* Content container with fixed height */}
-  <div className="relative z-10 min-h-[500px] md:min-h-[550px] flex flex-col">
-    {/* Title section */}
-    <div className="max-w-3xl mb-8">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-10 leading-tight">
-        Dental Examinations
-      </h1>
-      <p className=" text-lg md:text-xl text-gray-100">
-        Book Your Appointment With Our Lovely And Experienced Hygienist For A Pearly White Smile.
-      </p>
-    </div>
-    
-    {/* Spacer to push description to bottom */}
-
-    
-    {/* Description Card with fixed max height and scrollable content */}
-    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-5 md:p-6 mt-2 rounded-b-[30px] md:rounded-b-[40px] max-h-[200px] md:max-h-[180px] overflow-y-auto">
-
-      <p className="text-sm md:text-base leading-relaxed">
-        <span className="font-semibold">{displayedText1}</span>
-        {/* Blinking cursor */}
-        {currentIndex1 < fullText1.length && (
-          <span className="ml-1 inline-block w-2 h-4 bg-white animate-pulse"></span>
-        )}
-      </p>
-      <p className="text-sm md:text-base text-white leading-relaxed mt-3 mb-2">
-        {displayedText2}
-        {/* Blinking cursor for second paragraph */}
-        {isTypingComplete1 && currentIndex2 < fullText2.length && (
-          <span className="ml-1 inline-block w-2 h-4 bg-white animate-pulse"></span>
-        )}
-      </p>
-    </div>
+  <div className="relative z-10 max-w-3xl">
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+      Dental Examinations
+    </h1>
+    <p className="mt-4 text-lg md:text-xl text-gray-100">
+      Book Your Appointment With Our Lovely And Experienced Hygienist For A Pearly White Smile.
+    </p>
+    <br />
+    <br />
+    <br />
   </div>
-</section>
+      
+</section><br />
+{/* Description Card */}
+              <div className="bg-blue-900 text-white p-6 rounded-2xl shadow-lg max-w-5xl mx-auto">
+                <p className="text-sm md:text-base leading-relaxed">
+                  <span className="font-semibold">Dental Examination</span> which is also known as a check-up, allows the dentist to fully evaluate the health of your teeth and gums and to pinpoint any areas of concern, such as early signs of decay, acid erosion or gum disease.
+                </p>
+                <p className="text-sm md:text-base  text-white leading-relaxed mt-3 mb-2">
+                  Regular examinations allow us to help you to maintain a healthy mouth, teeth and gums. If we are able to identify any issues early it is possible to save a lot of pain, time and money!
+                </p>
+              </div>
+             
+         
+        <br />
+     
+   
 
       {/* What Does A Dental Examination Involve Section */}
       <section className="px-4 py-16 bg-gray-100">
@@ -165,7 +123,7 @@ export default function DentalExaminationsPage() {
                     <div className="w-14 h-14 bg-blue-900 rounded-full flex items-center justify-center text-white text-xl font-bold">
                       {step.number}
                     </div>
-                    <Icon className="w-8 h-8 text-blue-600" />
+                  
                     <p className="text-sm text-gray-700 leading-relaxed">
                       {step.description}
                     </p>
@@ -174,17 +132,18 @@ export default function DentalExaminationsPage() {
               );
             })}
           </div>
+
+         
         </div>
       </section>
-      
-      {/* Bottom Information Card */}
-      <div className="p-8 max-w-4xl mx-auto">
-        <p className="text-center text-gray-800 text-xl md:text-2xl leading-relaxed font-semibold">
-          If you require any further treatment the dentist will discuss all the possible options available, allowing you to make a fully informed decision on the treatment needed.
-        </p>
-      </div>
+       {/* Bottom Information Card */}
+          <div className=" p-8 max-w-4xl mx-auto">
+            <p className="text-center text-gray-800 text-xl md:text-2xl leading-relaxed font-semibold">
+              If you require any further treatment the dentist will discuss all the possible options available, allowing you to make a fully informed decision on the treatment needed.
+            </p>
+          </div>
 
-      {/* Appointment Booking & Map Section */}
+    {/* Appointment Booking & Map Section */}
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">

@@ -6,9 +6,9 @@ import logo from "../assets/logo.png";
 
 const servicesDropdown = [
   {
-    label: "General Dentistry",
-    href: "/general-dentistry",
-   subItems: [
+label: "General Dentistry",
+href: "/general-dentistry",
+subItems: [
   { label: "Dental Examination", href: "/general-dentistry/dental-examinations" },
   { label: "Fillings and Restorations", href: "/general-dentistry#fillings" },
   { label: "Dentures", href: "/general-dentistry#dentures" },
@@ -100,19 +100,17 @@ export default function Header() {
 
   return (
     <header className="fixed top-2 sm:top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[98%] sm:w-[96%] md:w-[95%] max-w-[1600px]">
-      <div className="w-full h-[56px] sm:h-[58px] md:h-[60px] flex items-center justify-between px-3 sm:px-4 md:px-8 bg-white/60 backdrop-blur-md shadow-lg rounded-2xl sm:rounded-3xl md:rounded-[2rem]">
+      <div className="w-full h-[56px] sm:h-[58px] md:h-[60px] flex items-center justify-between px-3 sm:px-4 md:px-8 bg-white/10 backdrop-blur-md shadow-lg rounded-2xl sm:rounded-3xl md:rounded-[2rem]">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-1 sm:gap-2 text-xl font-bold text-black z-50">
           <img src={logo} alt="Logo" className="h-8 sm:h-9 md:h-10 w-auto object-contain" />
-          <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#223B6E] whitespace-nowrap">
-            15 The Pantiles
-          </span>
+          
         </Link>
 
         {/* Desktop Navigation - UNCHANGED */}
         <nav
           ref={dropdownRef}
-          className="hidden lg:flex items-center gap-6 xl:gap-8 text-black font-sans relative"
+          className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 text-black font-sans relative flex-grow"
         >
           {navLinks.map((link) => (
             <div key={link.label} className="relative group">
@@ -127,7 +125,7 @@ export default function Header() {
                 >
                   <Link
                     to={link.href}
-                    className={`font-bold hover:text-[#223B6E] transition ${
+                    className={`font-bold hover:text-[#0b4ed4] transition ${
                       location.pathname === link.href ? "text-[#223B6E]" : ""
                     }`}
                   >
@@ -160,7 +158,7 @@ export default function Header() {
                             >
                               <Link
                                 to={item.href}
-                                className="flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#223B6E] transition-colors"
+                                className="flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-blue-50  hover:text-[#0b4ed4]  transition-colors"
                                 onClick={() => {
                                   setActiveDropdown(null);
                                   setActiveSubDropdown(null);
@@ -185,7 +183,7 @@ export default function Header() {
                                         <Link
                                           to={subItem.href}
                                           key={subItem.label}
-                                          className="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-[#223B6E] transition-colors cursor-pointer"
+                                          className="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50  hover:text-[#0b4ed4] transition-colors cursor-pointer"
                                           onClick={() => {
                                             setActiveDropdown(null);
                                             setActiveSubDropdown(null);
@@ -208,8 +206,8 @@ export default function Header() {
               ) : (
                 <Link
                   to={link.href}
-                  className={`font-bold hover:text-[#223B6E] transition ${
-                    location.pathname === link.href ? "text-[#223B6E]" : ""
+                  className={`font-bold  hover:text-[#0b4ed4] transition ${
+                    location.pathname === link.href ? "text-[#0b4ed4]" : ""
                   }`}
                 >
                   {link.label}
@@ -217,15 +215,16 @@ export default function Header() {
               )}
             </div>
           ))}
-
-          <a
+ <a
             href="#book"
             className="ml-4 bg-[#223B6E] text-white px-5 py-2 rounded-full hover:bg-blue-900 transition font-bold"
           >
             Book Now
           </a>
-        </nav>
 
+          
+        </nav>
+       
         {/* Mobile Toggle - Improved Responsiveness */}
         <button
           className="lg:hidden text-[#223B6E] z-50 p-1.5 sm:p-2"
@@ -251,7 +250,7 @@ export default function Header() {
                   {link.dropdown ? (
                     <div className="py-2">
                       <div
-                        className="flex items-center justify-between py-2 sm:py-2.5 font-semibold cursor-pointer hover:text-[#223B6E] transition text-sm sm:text-base"
+                        className="flex items-center justify-between py-2 sm:py-2.5 font-semibold cursor-pointer  hover:text-[#0b4ed4] transition text-sm sm:text-base"
                         onClick={() =>
                           setActiveDropdown(
                             activeDropdown === link.label ? null : link.label
@@ -281,7 +280,7 @@ export default function Header() {
                               <div key={item.label} className="py-1.5 sm:py-2">
                                 <Link
                                   to={item.href}
-                                  className="block py-1.5 text-gray-700 hover:text-[#223B6E] transition font-medium text-sm sm:text-base"
+                                  className="block py-1.5 text-gray-700  hover:text-[#0b4ed4] transition font-medium text-sm sm:text-base"
                                   onClick={closeMobileMenu}
                                 >
                                   {item.label}
@@ -293,7 +292,7 @@ export default function Header() {
                                       <Link
                                         to={subItem.href}
                                         key={subItem.label}
-                                        className="block py-1.5 text-gray-600 hover:text-[#223B6E] text-xs sm:text-sm cursor-pointer transition"
+                                        className="block py-1.5 text-gray-600  hover:text-[#0b4ed4] text-xs sm:text-sm cursor-pointer transition"
                                         onClick={closeMobileMenu}
                                       >
                                         {subItem.label}
@@ -311,7 +310,7 @@ export default function Header() {
                     <Link
                       to={link.href}
                       onClick={closeMobileMenu}
-                      className={`block py-2.5 sm:py-3 font-semibold hover:text-[#223B6E] transition text-sm sm:text-base ${
+                      className={`block py-2.5 sm:py-3 font-semibold  hover:text-[#0b4ed4] transition text-sm sm:text-base ${
                         location.pathname === link.href ? "text-[#223B6E] font-bold" : ""
                       }`}
                     >

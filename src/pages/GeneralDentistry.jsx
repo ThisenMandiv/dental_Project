@@ -74,8 +74,8 @@ You can trust in us to handle your dental history carefully, ensuring your denta
       </section>
 
       {/* Intro Section */}
-      <div className="max-w-5xl mx-auto bg-blue-100 mt-10 rounded-2xl shadow-lg p-6 md:p-10">
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
+      <div className="max-w-5xl mx-auto bg-blue-900 mt-10 rounded-2xl shadow-lg p-6 md:p-10">
+        <p className="text-gray-100 text-base md:text-lg leading-relaxed text-justify">
           Regular check ups are an integral part of any dental routine. In order to keep on top of your dental health, we require regular professional assessments of your mouth. We recommend that you attend at least once annually however, should you need more regular check ups, this can be arranged.
         </p>
       </div>
