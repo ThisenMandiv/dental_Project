@@ -20,11 +20,11 @@ const servicesDropdown = [
       { label: "Dentures", href: "/general-dentistry/removable-dentures" },
       {
         label: "Dental Crowns and Bridges",
-        href: "/general-dentistry#crowns-bridges",
+        href: "/general-dentistry/crowns-and-bridges",
       },
       { label: "Dental Hygienist", href: "/general-dentistry#hygienist" },
-      { label: "Root Canal Treatment", href: "/general-dentistry#root-canal" },
-      { label: "Dental Extraction", href: "/general-dentistry#extraction" },
+      { label: "Root Canal Treatment", href: "/general-dentistry/root-canal" },
+      { label: "Dental Extraction", href: "/general-dentistry/extraction" },
     ],
   },
   {

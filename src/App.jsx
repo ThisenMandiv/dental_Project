@@ -17,6 +17,9 @@ import Testimonials from './pages/Testimonials';
 import DentalExaminationsPage from './pages/DentalExaminationsPage';
 import RemovableDenturesPage from './pages/RemovableDenturesPage';
 import FillingsAndRestorations from './pages/FillingsAndRestorations';
+import DentalCrownsAndBridges from './pages/DentalCrownsAndBridges';
+import RootCanal from './pages/RootCanal';
+import ToothExtraction from './pages/ToothExtraction';
 
 
 function App() {
@@ -31,7 +34,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
-       
           <Route path="/fees" element={<Fees />} />
           <Route path="/special-offers" element={<SpecialOffersPage />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
@@ -42,6 +44,14 @@ function App() {
           <Route path="/general-dentistry/dental-examinations" element={<DentalExaminationsPage />} />
           <Route path="/general-dentistry/removable-dentures" element={<RemovableDenturesPage />} />
           <Route path="/general-dentistry/fillings" element={<FillingsAndRestorations />} />
+          <Route path="/general-dentistry/fillings" element={<FillingsAndRestorations />} />
+          <Route path="/general-dentistry/fillings" element={<FillingsAndRestorations />} />
+          <Route path="/general-dentistry/crowns-and-bridges" element={<DentalCrownsAndBridges />} />
+          <Route path="/general-dentistry/root-canal" element={<RootCanal />} />
+          <Route path="/general-dentistry/extraction" element={<ToothExtraction />} />
+
+
+          
           
         </Routes>
       </div>

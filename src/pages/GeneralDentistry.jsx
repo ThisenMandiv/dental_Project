@@ -108,7 +108,7 @@ You can trust in us to handle your dental history carefully, ensuring your denta
                 </div>
                 <div className="p-4 text-center">
                   <button className="w-full bg-[#00072D] text-white py-3 rounded-lg font-semibold hover:bg-[#00124a] transition-colors">
-                    {service.title} — {service.price}
+                    {service.title} <br /> {service.price}
                   </button>
                 </div>
               </div>
@@ -127,7 +127,7 @@ You can trust in us to handle your dental history carefully, ensuring your denta
                 onClick={() => setActiveTab(index)}
                 className={`px-5 py-2.5 rounded-full font-semibold text-sm sm:text-base transition-all ${
                   activeTab === index
-                    ? 'bg-blue-600 text-white shadow-md'
+                    ? 'bg-gray-600 text-white shadow-md'
                     : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-300'
                 }`}
               >
