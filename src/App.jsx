@@ -6,6 +6,7 @@ import SpecialOffersPage from './pages/SpecialOffersPage';
 import ContactUsPage from './pages/ContactUsPage';
 import Fees from './pages/Fees';         // if you have this page
 import Header from './components/Header';
+import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import ScrollToAnchor from './components/ScrollToAnchor';
 import './App.css';
@@ -15,6 +16,7 @@ import GeneralDentistry from './pages/GeneralDentistry';
 import Testimonials from './pages/Testimonials';
 import DentalExaminationsPage from './pages/DentalExaminationsPage';
 import RemovableDenturesPage from './pages/RemovableDenturesPage';
+import FillingsAndRestorations from './pages/FillingsAndRestorations';
 
 
 function App() {
@@ -39,8 +41,11 @@ function App() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/general-dentistry/dental-examinations" element={<DentalExaminationsPage />} />
           <Route path="/general-dentistry/removable-dentures" element={<RemovableDenturesPage />} />
+          <Route path="/general-dentistry/fillings" element={<FillingsAndRestorations />} />
+          
         </Routes>
       </div>
+     
     </Router>
   );
 }

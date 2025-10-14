@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CheckCircle } from 'lucide-react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import dentureshero from '../assets/dentures_hero.jpg';
 
 const RemovableDenturesPage = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -45,17 +46,17 @@ You can trust in us to handle your dental history carefully, ensuring your denta
         <Header />
 {/* Hero Section */}
 <section
-  className="relative bg-cover bg-center text-white py-20 md:py-28 px-6"
-  style={{
-    backgroundImage: `url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1600&h=900&fit=crop')`,
-  }}
+  className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+style={{
+          backgroundImage: `url(${dentureshero})`,
+        }}
 >
   {/* Dark overlay for readability */}
-  <div className="absolute inset-0 bg-black/50"></div>
+  <div className="absolute inset-0 bg-black/30"></div>
 
   <div className="relative z-10 max-w-4xl mx-auto text-center md:text-left">
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-      Removable <br /> Dentures
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white pt-60 leading-tight">
+      Removable  Dentures
     </h1>
     <p className="mt-4 text-lg md:text-xl text-gray-100">
       Book Your Hygiene Appointment With Our Lovely And Experienced Hygienist For A Pearly White Smile.
