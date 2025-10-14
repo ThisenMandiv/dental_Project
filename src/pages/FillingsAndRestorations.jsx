@@ -85,7 +85,7 @@ const FillingsAndRestorations = () => {
                 <video
                   src={fillingVideo}
                   autoPlay
-                  loopF
+                  loop
                   muted
                   playsInline
                   className="w-full rounded-lg shadow-lg"
