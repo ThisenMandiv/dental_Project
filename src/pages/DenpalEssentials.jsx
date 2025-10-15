@@ -6,7 +6,7 @@ import dentureshero from "../assets/dentures_hero.jpg";
 import crownshero from "../assets/CrownAndBridgehero.jpg";
 import crownsandhero1 from "../assets/CrownAndBridge2.jpg";
 
-const NHS = () => {
+const DenpalEssentials = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const fittingSteps = [
@@ -46,7 +46,7 @@ It may be necessary for you to see the dental hygienist more regularly to ensure
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 max-w-4xl mx-auto text-center md:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white pt-70 leading-tight">
-           NHS
+            Denpal Essentials
           </h1>
           <p className="mt-4 text-lg md:text-xl text-gray-100">
             Book your hygiene appointment with our lovely and experienced hygienist for a pearly white smile
@@ -139,4 +139,4 @@ It may be necessary for you to see the dental hygienist more regularly to ensure
   );
 };
 
-export default NHS;
+export default DenpalEssentials;

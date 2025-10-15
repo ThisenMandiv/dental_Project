@@ -1,110 +1,119 @@
 import React from 'react';
-import Header from '../components/Header';
 import Footer from '../components/Footer';
-import doctorImage from '../assets/doctor-image.png';
+import cosmatichero from '../assets/cosmetic-hero.jpeg'
+import cosmetics1 from '../assets/cosmetics1.jpeg'
+import cosmetics2 from '../assets/cosmetics2.jpeg'
+import cosmetics3 from '../assets/cosmetics3.jpeg'
+import cosmetics4 from '../assets/cosmetics4.jpeg'
+import cosmetics5 from '../assets/cosmetics5.jpeg'
 
 const CosmeticDentistry = () => {
   const services = [
     {
-      title: 'Teeth Whitening',
-      description: 'Professional teeth whitening treatments for a brighter, more confident smile using safe, effective methods.',
-      price: 'From £299'
+      title: 'Veneers from',
+      price: '£750',
+      image: cosmetics1
     },
     {
-      title: 'Porcelain Veneers',
-      description: 'Custom-made thin shells of porcelain that cover the front surface of teeth to improve appearance.',
-      price: 'From £650'
+      title: 'Dental Implants',
+      price: '£2495',
+      image: cosmetics2
     },
     {
-      title: 'Composite Bonding',
-      description: 'Tooth-colored resin material applied to teeth to improve shape, color, and overall appearance.',
-      price: 'From £150'
+      title: 'Tooth Whitening',
+      price: '£349',
+      image: cosmetics3
     },
     {
-      title: 'Smile Makeovers',
-      description: 'Comprehensive cosmetic treatment plans combining multiple procedures for your perfect smile.',
-      price: 'From £1,200'
+      title: 'Facial Aesthetics',
+      price: '£300',
+      image: cosmetics4
     },
     {
-      title: 'Invisalign Clear Aligners',
-      description: 'Nearly invisible aligners to straighten teeth without traditional metal braces.',
-      price: 'From £2,500'
+      title: 'Invisalign',
+      price: '£2300',
+      image: cosmetics5
     }
   ];
 
   return (
-    <div className="min-h-screen">
-      <Header />
-
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-r from-purple-900 to-pink-700 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Cosmetic Dentistry</h1>
-            <p className="text-xl leading-relaxed">
-              Transform your smile with our advanced cosmetic dental treatments.
-              From teeth whitening to complete smile makeovers, we help you achieve the smile you've always wanted.
-            </p>
+    <div>
+      {/* Hero Section with Background Image */}
+      <div
+        className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${cosmatichero})`
+        }}
+      >
+        <div className="relative z-10 flex items-center justify-start min-h-screen px-4 md:px-8">
+          <div className="max-w-6xl mx-auto w-full">
+            <div className="text-white max-w-2xl">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Cosmetic <br /> Dentistry
+              </h1>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <h3 className="text-2xl font-bold text-gray-800 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-purple-600 font-bold text-lg">{service.price}</span>
-                  <button className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors">
-                    Book Now
-                  </button>
+      {/* Main Content Container */}
+      <div className="px-4 md:px-8 py-16 bg-white">
+        <div className="max-w-6xl mx-auto">
+          {/* Info Box */}
+          <div className="mb-16 bg-white border-2 border-gray-200 p-8 md:p-12 rounded-2xl shadow-lg">
+            <p className="text-lg md:text-xl leading-relaxed text-gray-800">
+              Are you looking for the best Cosmetic Dentist in Essex? Look no further than The Pantiles Dental Practice. As well as general dentistry services, we also provide a number of cosmetic dentistry services to the people of Billericay, Basildon, Ingatestone and beyond.
+            </p>
+            <p className="text-lg md:text-xl leading-relaxed text-gray-800 mt-3">
+              Cosmetic dentistry is fast becoming a necessity as more and more people strive for the ultimate Hollywood smile. Here at Pantiles Dental however, we offer a range of different cosmetic dentistry services to ensure everyone gets the right course of treatment for them. Let's take a closer look at just some of the treatments available in our billericay dental practice.
+            </p>
+          </div>
+
+          {/* Services Grid - First Row */}
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {services.slice(0, 3).map((service, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="bg-[#223B6E] text-white text-center py-3 px-4 rounded-lg">
+                    <h3 className="text-lg font-semibold">{service.title}</h3>
+                    <p className="text-2xl font-bold mt-1">{service.price}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Services Grid - Second Row */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {services.slice(3, 5).map((service, index) => (
+              <div key={index + 3} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="bg-[#223B6E] text-white text-center py-3 px-4 rounded-lg">
+                    <h3 className="text-lg font-semibold">{service.title}</h3>
+                    <p className="text-2xl font-bold mt-1">{service.price}</p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
-              <img
-                src={doctorImage}
-                alt="Cosmetic dentistry"
-                className="w-full rounded-lg shadow-xl"
-              />
-            </div>
-            <div className="lg:w-1/2">
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">Benefits of Cosmetic Dentistry</h2>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl text-purple-600 mt-1">•</span>
-                  <span className="text-lg text-gray-700">Boost your confidence and self-esteem</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl text-purple-600 mt-1">•</span>
-                  <span className="text-lg text-gray-700">Improve your oral health</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl text-purple-600 mt-1">•</span>
-                  <span className="text-lg text-gray-700">Long-lasting, natural-looking results</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl text-purple-600 mt-1">•</span>
-                  <span className="text-lg text-gray-700">Advanced technology and techniques</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      {/* Footer */}
       <Footer />
     </div>
   );

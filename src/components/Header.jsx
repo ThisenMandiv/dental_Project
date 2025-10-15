@@ -22,7 +22,7 @@ const servicesDropdown = [
         label: "Dental Crowns and Bridges",
         href: "/general-dentistry/crowns-and-bridges",
       },
-      { label: "Dental Hygienist", href: "/general-dentistry#hygienist" },
+      { label: "Dental Hygienist", href: "/general-dentistry/hygienist" },
       { label: "Root Canal Treatment", href: "/general-dentistry/root-canal" },
       { label: "Dental Extraction", href: "/general-dentistry/extraction" },
     ],
@@ -45,9 +45,9 @@ const servicesDropdown = [
   { label: "Denplan Essentials", href: "/denplan-essentials" },
   {
     label: "Specialist Treatment",
-    href: "/specialist-treatment",
+    href: "/home",
     subItems: [
-      { label: "Sedation Dentist", href: "/sedation-dentist#sedation-dentist" },
+      { label: "Sedation Dentist", href: "/home/sedation-dentist" },
     ],
   },
   { label: "NHS", href: "/nhs" },

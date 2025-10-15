@@ -1,106 +1,135 @@
-import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import doctorImage from '../assets/doctor-image.png';
+import React, { useState } from "react";
+import { CheckCircle } from "lucide-react";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import dentureshero from "../assets/dentures_hero.jpg";
+import crownshero from "../assets/CrownAndBridgehero.jpg";
+import crownsandhero1 from "../assets/CrownAndBridge2.jpg";
 
-const FacialAesthetics = () => {
-  const services = [
+const FacialAesthatics = () => {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const fittingSteps = [
+    "Dental crowns & bridges are usually made from a hard, white substance that can be modified by adding colour or shading to give a more realistic appearance of a natural tooth.",
+    "A bridge is made up of a crown next to a missing tooth, or one crown either side of missing teeth, with a false tooth or teeth in between which restores the space caused by missing teeth.",
+    "Crowns and bridges can be made from a number of different materials and your dentist is the best person to advise you as to which best material is suitable depending on the type of crown or bridge required and where it is being placed in your mouth.",
+  ];
+
+  const tabs = [
     {
-      title: 'Anti-Wrinkle Injections',
-      description: 'Botulinum toxin injections to reduce fine lines and wrinkles for a more youthful appearance.',
-      price: 'From £150'
+      title: "Preparing The Tooth For A Crown or Bridge",
+      content: `Firstly the tooth is prepared under local anaesthetic so the crown or bridge is able to be fitted on the tooth after which moulds (impressions) are taken of both your upper and lower teeth.
+This is done so that the technician making your crown or bridge is able to construct it correctly so it will sit within your bite. At this appointment, the dentist will also choose the shade for the crown or bridge which most closely matches the natural shade of your teeth.
+The impressions are then sent to a dental lab, where the technician will build the crown or bridge. This normally takes approximately two weeks so in the meantime your dentist may put a temporary crown or bridge on your tooth or teeth to protect during this time.`,
     },
     {
-      title: 'Dermal Fillers',
-      description: 'Hyaluronic acid fillers to restore volume, enhance lips, and smooth facial lines.',
-      price: 'From £250'
+      title: "Fitting The Dental Crown or Bridge",
+      content: `At the second visit, the temporary restoration is removed and the new crown or bridge fitted.`,
     },
     {
-      title: 'Lip Enhancement',
-      description: 'Natural-looking lip augmentation to enhance shape, volume, and definition.',
-      price: 'From £200'
+      title: "How Long Do Dental Crowns/Bridges Last?",
+      content: `If it is taken care of properly a crown or bridge can last for many years. The crown or bridge itself cannot decay but the teeth underneath it can.
+It is therefore extremely important to make sure that you clean around the crown or bridge as you would your own teeth and use to use floss or interdental brushes to clean in between the crown or bridge and adjacent teeth.
+It may be necessary for you to see the dental hygienist more regularly to ensure that the restorations are kept in good condition.`,
     },
-    {
-      title: 'Cheek Enhancement',
-      description: 'Restore facial volume and contour cheeks for a more youthful profile.',
-      price: 'From £300'
-    },
-    {
-      title: 'Skin Rejuvenation',
-      description: 'Advanced treatments to improve skin texture, tone, and overall appearance.',
-      price: 'From £180'
-    }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-r from-green-900 to-teal-700 text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Facial Aesthetics</h1>
-            <p className="text-xl leading-relaxed">
-              Enhance your natural beauty with our professional facial aesthetic treatments.
-              Safe, effective procedures performed by qualified practitioners.
-            </p>
-          </div>
+      <section
+        className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${crownshero})` }}
+      >
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white pt-70 leading-tight">
+            Facial Aesthetics 
+          </h1>
+          <p className="mt-4 text-lg md:text-xl text-gray-100">
+            Book your hygiene appointment with our lovely and experienced hygienist for a pearly white smile
+          </p>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <h3 className="text-2xl font-bold text-gray-800 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-green-600 font-bold text-lg">{service.price}</span>
-                  <button className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
-                    Book Now
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Description Card */}
+      <div className="max-w-5xl mx-auto bg-gray-200 mt-10 text-black rounded-2xl shadow-lg text-xl p-6 md:p-10">
+        <p className="leading-relaxed">
+          Facial aesthetics, otherwise known as facial rejuvenation treatments is the term used to describe non-surgical procedures that reduce the signs of ageing on the face. Facial aesthetic treatments are used to give people a more youthful and radiant appearance. These treatments can soften wrinkles, contour the face and define certain facial features.
+        </p>
+      </div>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
-              <img
-                src={doctorImage}
-                alt="Facial aesthetics"
-                className="w-full rounded-lg shadow-xl"
-              />
-            </div>
-            <div className="lg:w-1/2">
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">Why Choose Our Facial Aesthetics?</h2>
+      {/* Steps Section */}
+      <section className="px-4 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                What Are Dental Crowns/Bridges Made From?
+              </h2>
               <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl text-green-600 mt-1">•</span>
-                  <span className="text-lg text-gray-700">Qualified and experienced practitioners</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl text-green-600 mt-1">•</span>
-                  <span className="text-lg text-gray-700">Premium quality products and materials</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl text-green-600 mt-1">•</span>
-                  <span className="text-lg text-gray-700">Natural-looking results</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-2xl text-green-600 mt-1">•</span>
-                  <span className="text-lg text-gray-700">Personalized treatment plans</span>
-                </li>
+                {fittingSteps.map((step, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
+                    <span className="text-gray-700 leading-relaxed">{step}</span>
+                  </li>
+                ))}
               </ul>
             </div>
+            <div className="relative">
+              <div className="rounded-3xl overflow-hidden">
+                <img
+                  src= {crownsandhero1}
+                  alt="Smiling patient"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Heading Section */}
+      <section className="px-4 py-16 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-blue-900 mb-12 leading-relaxed">
+            How To Get Dental Crowns & Bridges <br />Fitted in Essex?
+          </h2>
+        </div>
+      </section>
+
+      {/* Tabs Section */}
+      <section className="bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex justify-center gap-3 mb-10 flex-nowrap">
+            {tabs.map((tab, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveTab(index)}
+                className={`px-5 py-2.5 rounded-full font-semibold text-sm sm:text-base transition-all ${
+                  activeTab === index
+                    ? "bg-gray-600 text-white shadow-md"
+                    : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-300"
+                }`}
+              >
+                {tab.title}
+              </button>
+            ))}
+          </div>
+
+          <div className="bg-blue-100 rounded-2xl shadow-lg p-6 md:p-10 max-w-5xl mx-auto text-gray-700 text-base md:text-lg leading-relaxed space-y-5 mb-10">
+            {tabs[activeTab].content.split("\n\n").map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+
+            {/* Optional custom heading for last tab */}
+            {activeTab === 2 && (
+              <h2 className="text-2xl font-bold mt-4 text-gray-900">
+                Enquire about our Dental Crowns and Bridges service at our Dental Practice in Billericay, Essex
+              </h2>
+            )}
           </div>
         </div>
       </section>
@@ -110,4 +139,4 @@ const FacialAesthetics = () => {
   );
 };
 
-export default FacialAesthetics;
+export default FacialAesthatics;

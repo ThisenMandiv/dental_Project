@@ -20,7 +20,14 @@ import FillingsAndRestorations from './pages/FillingsAndRestorations';
 import DentalCrownsAndBridges from './pages/DentalCrownsAndBridges';
 import RootCanal from './pages/RootCanal';
 import ToothExtraction from './pages/ToothExtraction';
-
+import FacialAesthetics from './pages/FacialAesthetics';
+import DenpalCare from './pages/DenpalCare';
+import DenpalEssentials from './pages/DenpalEssentials';
+import SedationDentist from './pages/SedationDentist';
+import CosmeticDentistry from './pages/CosmeticDentistry';
+import NHS from './pages/NHS';
+import EmergencyDentalTreatment from "./pages/EmergencyDentalTreatment";
+import DentalHygenist from "./pages/DentalHygenist";
 
 function App() {
   return (
@@ -28,9 +35,7 @@ function App() {
       <ScrollToTop />
       <ScrollToAnchor />
       <Header />
-
-      <div>
-        <Routes>
+      <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -49,13 +54,16 @@ function App() {
           <Route path="/general-dentistry/crowns-and-bridges" element={<DentalCrownsAndBridges />} />
           <Route path="/general-dentistry/root-canal" element={<RootCanal />} />
           <Route path="/general-dentistry/extraction" element={<ToothExtraction />} />
-
-
-          
-          
+          <Route path="/facial-aesthetics" element={<FacialAesthetics />} />
+          <Route path="/general-dentistry/hygienist" element={<DentalHygenist />} />
+          <Route path="/denplan-care" element={<DenpalCare />} />
+          <Route path="/denplan-essentials" element={<DenpalEssentials />} />
+          <Route path="/home/sedation-dentist" element={<SedationDentist />} />
+          <Route path="/cosmetic-dentistry" element={<CosmeticDentistry />} />
+          <Route path="/nhs" element={<NHS />} />
+          <Route path="/emergency-dental-treatment" element={<EmergencyDentalTreatment />} />
         </Routes>
-      </div>
-     
+      <Footer />
     </Router>
   );
 }
