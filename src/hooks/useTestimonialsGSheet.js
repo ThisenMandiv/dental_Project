@@ -6,22 +6,22 @@ export default function useTestimonialsGSheet() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchTestimonials = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const data = await getTestimonials();
-        setList(data);
-      } catch (err) {
-        console.error('Error loading testimonials:', err);
-        setError('Failed to load testimonials');
-        setList([]);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchTestimonials = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const data = await getTestimonials();
+      setList(data);
+    } catch (err) {
+      console.error('Error loading testimonials:', err);
+      setError('Failed to load testimonials');
+      setList([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchTestimonials();
   }, []);
 
@@ -29,7 +29,8 @@ export default function useTestimonialsGSheet() {
     try {
       setError(null);
       await postTestimonial(item);
-      setList((prevList) => [item, ...prevList]);
+      // Refetch testimonials from the server to avoid duplicates
+      await fetchTestimonials();
     } catch (err) {
       console.error('Error adding testimonial:', err);
       setError('Failed to add testimonial');
