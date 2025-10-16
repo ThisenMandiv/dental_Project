@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { CheckCircle } from "lucide-react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import denpalcarehero from "../assets/denpalcarehero.jpg";
+
 
 // Placeholder images - replace with your actual imports
-const crownshero = "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&h=600&fit=crop";
+const crownshero = denpalcarehero
 
 const DenpalCare = () => {
   return (
@@ -12,7 +14,7 @@ const DenpalCare = () => {
       <Header/>
       {/* Hero Section */}
       <section
-        className="relative h-[700px] bg-cover bg-center bg-no-repeat"
+        className="relative h-[600px] bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${crownshero})` }}
       >
         <div className="absolute inset-0 bg-black/20"></div>
