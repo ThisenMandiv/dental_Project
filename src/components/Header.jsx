@@ -46,9 +46,7 @@ const servicesDropdown = [
   {
     label: "Specialist Treatment",
     href: "/home",
-    subItems: [
-      { label: "Sedation Dentist", href: "/home/sedation-dentist" },
-    ],
+    subItems: [{ label: "Sedation Dentist", href: "/home/sedation-dentist" }],
   },
   { label: "NHS", href: "/nhs" },
   { label: "Emergency Dental Treatment", href: "/emergency-dental-treatment" },
@@ -110,7 +108,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-2 sm:top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[98%] sm:w-[96%] md:w-[95%] max-w-[1600px]">
-   <div className="w-full h-[56px] sm:h-[58px] md:h-[60px] flex items-center justify-between px-3 sm:px-4 md:px-8 bg-white/90 border-1 border-blue-800 shadow-lg rounded-2xl sm:rounded-3xl md:rounded-[2rem]">
+      <div className="w-full h-[56px] sm:h-[58px] md:h-[60px] flex items-center justify-between px-3 sm:px-4 md:px-8 bg-white/90 border-1 border-blue-800 shadow-lg rounded-2xl sm:rounded-3xl md:rounded-[2rem]">
         {/* Logo */}
         <Link
           to="/"
@@ -123,7 +121,7 @@ export default function Header() {
           />
         </Link>
 
-        {/* Desktop Navigation - UNCHANGED */}
+        {/* Desktop Navigation */}
         <nav
           ref={dropdownRef}
           className="hidden lg:flex items-center justify-center gap-6 xl:gap-14 text-black font-sans relative flex-grow"
@@ -235,31 +233,27 @@ export default function Header() {
               )}
             </div>
           ))}
-          <div>
-            <a
-              href="#book"
-              className="ml-4 bg-[#223B6E] text-white px-5 py-2 rounded-full hover:bg-blue-900 transition font-bold "
-            >
-              Book Now
-            </a>
-          </div>
         </nav>
 
-        {/* Mobile Toggle - Improved Responsiveness */}
+        {/* Desktop Book Now Button */}
+        <a
+          href="#book"
+          className="hidden lg:inline-block ml-4 bg-[#223B6E] text-white px-5 py-2 rounded-full hover:bg-blue-900 transition font-bold"
+        >
+          Book Now
+        </a>
+
+        {/* Mobile Toggle */}
         <button
           className="lg:hidden text-[#223B6E] z-50 p-1.5 sm:p-2"
           onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
-          {open ? (
-            <X size={24} className="sm:w-7 sm:h-7" />
-          ) : (
-            <Menu size={24} className="sm:w-7 sm:h-7" />
-          )}
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Nav - Improved Responsiveness */}
+      {/* Mobile Nav */}
       <AnimatePresence>
         {open && (
           <motion.nav
@@ -348,7 +342,9 @@ export default function Header() {
                   )}
                 </li>
               ))}
-              <li className="pt-2 sm:pt-3">
+
+              {/* Single Book Now Button in Mobile Menu */}
+              <li className="pt-2 sm:pt-3 border-t border-gray-200 mt-2">
                 <a
                   href="#book"
                   onClick={closeMobileMenu}

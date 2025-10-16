@@ -2,139 +2,174 @@ import React, { useState } from "react";
 import { CheckCircle } from "lucide-react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import dentureshero from "../assets/dentures_hero.jpg";
-import crownshero from "../assets/CrownAndBridgehero.jpg";
-import crownsandhero1 from "../assets/CrownAndBridge2.jpg";
+
+// Placeholder images - replace with your actual imports
+const crownshero = "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&h=600&fit=crop";
 
 const DenpalCare = () => {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const fittingSteps = [
-    "Dental crowns & bridges are usually made from a hard, white substance that can be modified by adding colour or shading to give a more realistic appearance of a natural tooth.",
-    "A bridge is made up of a crown next to a missing tooth, or one crown either side of missing teeth, with a false tooth or teeth in between which restores the space caused by missing teeth.",
-    "Crowns and bridges can be made from a number of different materials and your dentist is the best person to advise you as to which best material is suitable depending on the type of crown or bridge required and where it is being placed in your mouth.",
-  ];
-
-  const tabs = [
-    {
-      title: "Preparing The Tooth For A Crown or Bridge",
-      content: `Firstly the tooth is prepared under local anaesthetic so the crown or bridge is able to be fitted on the tooth after which moulds (impressions) are taken of both your upper and lower teeth.
-This is done so that the technician making your crown or bridge is able to construct it correctly so it will sit within your bite. At this appointment, the dentist will also choose the shade for the crown or bridge which most closely matches the natural shade of your teeth.
-The impressions are then sent to a dental lab, where the technician will build the crown or bridge. This normally takes approximately two weeks so in the meantime your dentist may put a temporary crown or bridge on your tooth or teeth to protect during this time.`,
-    },
-    {
-      title: "Fitting The Dental Crown or Bridge",
-      content: `At the second visit, the temporary restoration is removed and the new crown or bridge fitted.`,
-    },
-    {
-      title: "How Long Do Dental Crowns/Bridges Last?",
-      content: `If it is taken care of properly a crown or bridge can last for many years. The crown or bridge itself cannot decay but the teeth underneath it can.
-It is therefore extremely important to make sure that you clean around the crown or bridge as you would your own teeth and use to use floss or interdental brushes to clean in between the crown or bridge and adjacent teeth.
-It may be necessary for you to see the dental hygienist more regularly to ensure that the restorations are kept in good condition.`,
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <Header />
-
+    <div className="min-h-screen bg-white">
+      <Header/>
       {/* Hero Section */}
       <section
-        className="relative min-h-screen bg-cover bg-center bg-no-repeat"
+        className="relative h-[700px] bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${crownshero})` }}
       >
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="relative z-10 max-w-4xl mx-auto text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white pt-70 leading-tight">
-            Denpal Care
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex flex-col justify-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+            Denplan<br />Care
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-gray-100">
-            Book your hygiene appointment with our lovely and experienced hygienist for a pearly white smile
+          <p className="mt-6 text-xl text-white max-w-md">
+            Book Your Hygiene Appointment With Our Lovely And Experienced Hygienist For A Pearly White Smile
           </p>
         </div>
       </section>
 
       {/* Description Card */}
-      <div className="max-w-5xl mx-auto bg-blue-900 mt-10 text-white rounded-2xl shadow-lg text-xl p-6 md:p-10">
-        <p className="leading-relaxed">
-          <span className="font-semibold">Removable dentures</span> are Crown is a tooth-shaped covering that fits over your tooth. It is used to strengthen and protect the tooth following root canal treatment if a tooth has suffered damage or just has a large tooth filling. Crowns can also be used for cosmetic purposes to improve the appearance of a tooth.
-        </p>
+      <div className="max-w-6xl mx-auto bg-white mt-16 mb-16 px-4">
+        <div className="bg-white rounded-3xl shadow-md border border-gray-100 p-8 md:p-12">
+          <p className="text-gray-800 text-lg leading-relaxed">
+            <span className="font-semibold">Denplan Care</span> monthly payment plan provides for regular dental care to maintain your dental health. A free dental assessment is made before you join so that the price you pay is dependent on the 'health' of your mouth. It includes the following treatment, when clinically necessary and where carried out at the practice by your registered dentist:
+          </p>
+        </div>
       </div>
 
-      {/* Steps Section */}
-      <section className="px-4 py-16">
+      {/* Two Column Section */}
+      <section className="px-4 py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                What Are Dental Crowns/Bridges Made From?
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Left Column */}
+            <div className="bg-[#1a2847] text-white rounded-3xl p-10">
+              <h2 className="text-2xl font-bold mb-6">
+                Denplan Care includes from £17.10 a month
               </h2>
               <ul className="space-y-4">
-                {fittingSteps.map((step, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700 leading-relaxed">{step}</span>
-                  </li>
-                ))}
+                <li className="flex items-start gap-3">
+                  <span className="text-white mt-1">•</span>
+                  <span>Dental Health Reviews ( Examinations)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white mt-1">•</span>
+                  <span>Hygiene appointments</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white mt-1">•</span>
+                  <span>Dental x-rays</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white mt-1">•</span>
+                  <span>Fillings</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white mt-1">•</span>
+                  <span>Preventive dental advice and therapy</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white mt-1">•</span>
+                  <span>Extractions</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white mt-1">•</span>
+                  <span>Periodontal (gum) treatment</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white mt-1">•</span>
+                  <span>Crowns, bridges, dentures, inlays (excluding laboratory fees)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-white mt-1">•</span>
+                  <span>Emergency appointments</span>
+                </li>
               </ul>
             </div>
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden">
-                <img
-                  src= {crownsandhero1}
-                  alt="Smiling patient"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
+
+            {/* Right Column */}
+            <div className="bg-[#e8f4f8] rounded-3xl p-10">
+              <h2 className="text-2xl font-bold mb-6 text-gray-900">
+                Supplementary Insurance
+              </h2>
+              <p className="text-gray-800 leading-relaxed text-lg">
+                Supplementary Insurance arranged by Denplan, which provides you with worldwide dental injury and dental emergency cover and access to Denplan's 24-hour Worldwide Dental Emergency Helpline.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Heading Section */}
+      {/* Fees Table Section */}
       <section className="px-4 py-16 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-blue-900 mb-12 leading-relaxed">
-            How To Get Dental Crowns & Bridges <br />Fitted in Essex?
-          </h2>
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-[#e8f4f8] rounded-3xl p-8 md:p-12 border-4 border-[#2c5aa0]">
+            <h2 className="text-2xl font-bold mb-8 text-gray-900">
+              DENPLAN CARE FEES
+            </h2>
+            
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b-2 border-gray-300">
+                    <th className="text-left py-4 px-4 font-bold text-gray-900">Fee Code</th>
+                    <th className="text-center py-4 px-4 font-bold text-gray-900">A</th>
+                    <th className="text-center py-4 px-4 font-bold text-gray-900">B</th>
+                    <th className="text-center py-4 px-4 font-bold text-gray-900">C</th>
+                    <th className="text-center py-4 px-4 font-bold text-gray-900">D</th>
+                    <th className="text-center py-4 px-4 font-bold text-gray-900">E</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-200">
+                    <td className="py-4 px-4">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 rounded-full bg-gray-800 flex items-center justify-center">
+                          <CheckCircle className="w-3 h-3 text-white" />
+                        </div>
+                        <span className="font-medium text-gray-900">Monthly</span>
+                      </div>
+                    </td>
+                    <td className="text-center py-4 px-4 text-gray-800">£19.19</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£31.54</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£38.79</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£45.36</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£50.63</td>
+                  </tr>
+                  <tr className="border-b border-gray-200">
+                    <td className="py-4 px-4">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 rounded-full bg-gray-800 flex items-center justify-center">
+                          <CheckCircle className="w-3 h-3 text-white" />
+                        </div>
+                        <span className="font-medium text-gray-900">Weekly</span>
+                      </div>
+                    </td>
+                    <td className="text-center py-4 px-4 text-gray-800">£4.43</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£7.28</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£8.95</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£10.47</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£11.68</td>
+                  </tr>
+                  <tr>
+                    <td className="py-4 px-4">
+                      <div className="flex items-center gap-2">
+                        <div className="w-5 h-5 rounded-full bg-gray-800 flex items-center justify-center">
+                          <CheckCircle className="w-3 h-3 text-white" />
+                        </div>
+                        <span className="font-medium text-gray-900">Daily</span>
+                      </div>
+                    </td>
+                    <td className="text-center py-4 px-4 text-gray-800">£0.63</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£1.04</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£1.28</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£1.49</td>
+                    <td className="text-center py-4 px-4 text-gray-800">£1.66</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
-
-      {/* Tabs Section */}
-      <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex justify-center gap-3 mb-10 flex-nowrap">
-            {tabs.map((tab, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTab(index)}
-                className={`px-5 py-2.5 rounded-full font-semibold text-sm sm:text-base transition-all ${
-                  activeTab === index
-                    ? "bg-gray-600 text-white shadow-md"
-                    : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-300"
-                }`}
-              >
-                {tab.title}
-              </button>
-            ))}
-          </div>
-
-          <div className="bg-blue-100 rounded-2xl shadow-lg p-6 md:p-10 max-w-5xl mx-auto text-gray-700 text-base md:text-lg leading-relaxed space-y-5 mb-10">
-            {tabs[activeTab].content.split("\n\n").map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
-
-            {/* Optional custom heading for last tab */}
-            {activeTab === 2 && (
-              <h2 className="text-2xl font-bold mt-4 text-gray-900">
-                Enquire about our Dental Crowns and Bridges service at our Dental Practice in Billericay, Essex
-              </h2>
-            )}
-          </div>
-        </div>
-      </section>
-
-      <Footer />
+      <Footer/>
     </div>
   );
 };

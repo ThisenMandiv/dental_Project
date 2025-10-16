@@ -63,7 +63,7 @@ function App() {
           <Route path="/nhs" element={<NHS />} />
           <Route path="/emergency-dental-treatment" element={<EmergencyDentalTreatment />} />
         </Routes>
-      <Footer />
+    
     </Router>
   );
 }

@@ -2,116 +2,82 @@ import React, { useState } from "react";
 import { CheckCircle } from "lucide-react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import dentureshero from "../assets/dentures_hero.jpg";
-import crownshero from "../assets/CrownAndBridgehero.jpg";
-import crownsandhero1 from "../assets/CrownAndBridge2.jpg";
+import facialaestheticshero from '../assets/facial-aesthetics-hero.jpg';
 
-const FacialAesthatics = () => {
+
+const FacialAesthetics = () => {
   const [activeTab, setActiveTab] = useState(0);
 
-  const fittingSteps = [
-    "Dental crowns & bridges are usually made from a hard, white substance that can be modified by adding colour or shading to give a more realistic appearance of a natural tooth.",
-    "A bridge is made up of a crown next to a missing tooth, or one crown either side of missing teeth, with a false tooth or teeth in between which restores the space caused by missing teeth.",
-    "Crowns and bridges can be made from a number of different materials and your dentist is the best person to advise you as to which best material is suitable depending on the type of crown or bridge required and where it is being placed in your mouth.",
+  const wrinkleRelaxingAreas = [
+    "Frown lines",
+    "Forehead lines",
+    "Crow's feet",
+    "Bunny lines",
+    "Gummy Smiles",
+    "Neck Bands",
+    "Jaw slimming",
+    "Excessive Under-arm sweating"
   ];
 
   const tabs = [
-    {
-      title: "Preparing The Tooth For A Crown or Bridge",
-      content: `Firstly the tooth is prepared under local anaesthetic so the crown or bridge is able to be fitted on the tooth after which moulds (impressions) are taken of both your upper and lower teeth.
-This is done so that the technician making your crown or bridge is able to construct it correctly so it will sit within your bite. At this appointment, the dentist will also choose the shade for the crown or bridge which most closely matches the natural shade of your teeth.
-The impressions are then sent to a dental lab, where the technician will build the crown or bridge. This normally takes approximately two weeks so in the meantime your dentist may put a temporary crown or bridge on your tooth or teeth to protect during this time.`,
-    },
-    {
-      title: "Fitting The Dental Crown or Bridge",
-      content: `At the second visit, the temporary restoration is removed and the new crown or bridge fitted.`,
-    },
-    {
-      title: "How Long Do Dental Crowns/Bridges Last?",
-      content: `If it is taken care of properly a crown or bridge can last for many years. The crown or bridge itself cannot decay but the teeth underneath it can.
-It is therefore extremely important to make sure that you clean around the crown or bridge as you would your own teeth and use to use floss or interdental brushes to clean in between the crown or bridge and adjacent teeth.
-It may be necessary for you to see the dental hygienist more regularly to ensure that the restorations are kept in good condition.`,
-    },
+    { title: "Available Cosmetic Treatments" },
+    { title: "Wrinkle Relaxing Treatments" }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-white">
       <Header />
-
+      
       {/* Hero Section */}
-      <section
-        className="relative min-h-screen bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${crownshero})` }}
-      >
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="relative z-10 max-w-4xl mx-auto text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl  font-bold text-white pt-70 leading-tight">
-            Facial Aesthetics 
-          </h1>
-          <p className="mt-4 text-lg md:text-xl text-gray-100">
-            Book your hygiene appointment with our lovely and experienced hygienist for a pearly white smile
-          </p>
-        </div>
-      </section>
-
-      {/* Description Card */}
-      <div className="max-w-5xl mx-auto bg-gray-200 mt-10 text-black rounded-2xl shadow-lg text-xl p-6 md:p-10">
-        <p className="leading-relaxed">
-          Facial aesthetics, otherwise known as facial rejuvenation treatments is the term used to describe non-surgical procedures that reduce the signs of ageing on the face. Facial aesthetic treatments are used to give people a more youthful and radiant appearance. These treatments can soften wrinkles, contour the face and define certain facial features.
-        </p>
-      </div>
-
-      {/* Steps Section */}
-      <section className="px-4 py-16">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                What Are Dental Crowns/Bridges Made From?
-              </h2>
-              <ul className="space-y-4">
-                {fittingSteps.map((step, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
-                    <span className="text-gray-700 leading-relaxed">{step}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden">
-                <img
-                  src= {crownsandhero1}
-                  alt="Smiling patient"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
+     <section 
+             className="relative h-[400px] sm:h-[500px] md:h-[600px] bg-cover bg-center"
+             style={{backgroundImage: `url(${facialaestheticshero})`}}
+           >
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative z-10 h-full flex items-center">
+          <div className="max-w-7xl mx-auto px-4 w-full">
+            <div className="max-w-xl">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                Facial Aesthetics
+              </h1>
+              <p className="text-lg md:text-xl text-white leading-relaxed">
+                Book Your Hygiene Appointment With Our Lovely And Experienced Hygienist For A Pearly White Smile
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Heading Section */}
-      <section className="px-4 py-16 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-blue-900 mb-12 leading-relaxed">
-            How To Get Dental Crowns & Bridges <br />Fitted in Essex?
-          </h2>
+      {/* Description Card */}
+      <div className="max-w-7xl mx-auto px-4 -mt-20 relative z-20 mb-16">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+          <p className="text-gray-800 text-base md:text-lg leading-relaxed text-center">
+            Facial aesthetics, otherwise known as facial rejuvenation treatments is the term used to describe non-surgical procedures that reduce the signs of ageing on the face. Facial aesthetic treatments are used to give people a more youthful and radiant appearance. These treatments can soften wrinkles, contour the face and define certain facial features.
+          </p>
         </div>
-      </section>
+      </div>
 
-      {/* Tabs Section */}
-      <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex justify-center gap-3 mb-10 flex-nowrap">
+      {/* Wrinkle Relaxing Section */}
+      <section className="px-4 py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-8">
+            Wrinkle Relaxing
+          </h2>
+          
+          <p className="text-center text-gray-800 text-lg md:text-xl leading-relaxed max-w-5xl mx-auto mb-12">
+            Injectable filler (injectable cosmetic filler, injectable facial filler) is a soft tissue filler injected into the skin to help fill in facial wrinkles restoring a smoother appearance. Most of these wrinkle fillers are temporary because they are eventually absorbed by the body
+          </p>
+
+          {/* Tabs */}
+          <div className="flex justify-center gap-4 mb-12 flex-wrap">
             {tabs.map((tab, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`px-5 py-2.5 rounded-full font-semibold text-sm sm:text-base transition-all ${
+                className={`px-8 py-3 rounded-full font-semibold text-base transition-all ${
                   activeTab === index
-                    ? "bg-gray-600 text-white shadow-md"
-                    : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-300"
+                    ? "bg-blue-200 text-gray-900"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                 }`}
               >
                 {tab.title}
@@ -119,18 +85,27 @@ It may be necessary for you to see the dental hygienist more regularly to ensure
             ))}
           </div>
 
-          <div className="bg-blue-100 rounded-2xl shadow-lg p-6 md:p-10 max-w-5xl mx-auto text-gray-700 text-base md:text-lg leading-relaxed space-y-5 mb-10">
-            {tabs[activeTab].content.split("\n\n").map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
+          {/* Treatment Areas List */}
+          {activeTab === 1 && (
+            <div className="max-w-4xl mx-auto bg-gray-200 rounded-3xl p-8 md:p-12">
+              <ul className="space-y-3">
+                {wrinkleRelaxingAreas.map((area, index) => (
+                  <li key={index} className="flex items-center gap-3 text-gray-900 text-lg">
+                    <span className="w-2 h-2 bg-gray-900 rounded-full"></span>
+                    <span>{area}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-            {/* Optional custom heading for last tab */}
-            {activeTab === 2 && (
-              <h2 className="text-2xl font-bold mt-4 text-gray-900">
-                Enquire about our Dental Crowns and Bridges service at our Dental Practice in Billericay, Essex
-              </h2>
-            )}
-          </div>
+          {activeTab === 0 && (
+            <div className="max-w-4xl mx-auto bg-gray-200 rounded-3xl p-8 md:p-12">
+              <p className="text-gray-800 text-lg leading-relaxed text-center">
+                Wrinkle relaxing injections (Botulinum toxin type A), commonly known as 'Botox' are a very effective form of anti wrinkle treatment. These injections effectively relax your facial muscles including the creases on your forehead, smoothes out skin and eliminate deeper lines
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -139,4 +114,4 @@ It may be necessary for you to see the dental hygienist more regularly to ensure
   );
 };
 
-export default FacialAesthatics;
+export default FacialAesthetics;
