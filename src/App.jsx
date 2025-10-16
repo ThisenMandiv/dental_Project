@@ -32,6 +32,7 @@ import CompositeBonding from "./pages/CompositeBonding";
 import DentalImplants from "./pages/DentalImplants";
 import ToothWhitening from "./pages/ToothWhitening ";
 import Invisalign from "./pages/Invisalign";
+import Veneers from "./pages/Veneers";
 
 function App() {
   return (
@@ -95,6 +96,10 @@ function App() {
         <Route
           path="/cosmetic-dentistry/dental-implants"
           element={<DentalImplants />}
+        />
+         <Route
+          path="/cosmetic-dentistry/veneers"
+          element={<Veneers />}
         />
         <Route
           path="/cosmetic-dentistry/tooth-whitening"

@@ -31,7 +31,7 @@ const servicesDropdown = [
     label: "Cosmetic Dentistry",
     href: "/cosmetic-dentistry",
     subItems: [
-      { label: "Veneers", href: "/cosmetic-dentistry#veneers" },
+      { label: "Veneers", href: "/cosmetic-dentistry/veneers" },
       {
         label: "Composite Bonding",
         href: "/cosmetic-dentistry/composite-bonding",
