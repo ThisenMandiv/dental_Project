@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Menu, X } from 'lucide-react';
-import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
 import dentistpatient from '../assets/dentist-patient.jpg';
 import dentures from '../assets/dentures.jpg';
 import glfis1 from '../assets/glgif1.gif';
@@ -12,7 +11,6 @@ import glfis4 from '../assets/glgif4.gif';
 import glfis5 from '../assets/glgif5.gif';
 import glfis6 from '../assets/glgif6.gif';
 import glfis7 from '../assets/glgif7.gif';
-
 
 const GeneralDentistry = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -57,44 +55,46 @@ You can trust in us to handle your dental history carefully, ensuring your denta
     <div className="min-h-screen bg-white font-sans">
       <Header />
 
-      {/* Hero Section */}
+      {/* Hero Section - Mobile Optimized */}
       <section
-  className="relative h-[400px] md:h-[600px] bg-cover bg-center text-white flex items-center px-6 md:px-20"
-  style={{ backgroundImage: `url(${dentistpatient})` }}
->
-  <div className="absolute inset-0 bg-black/30"></div>
+        className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] bg-cover bg-center text-white flex items-center px-4 sm:px-6 md:px-12 lg:px-20"
+        style={{ backgroundImage: `url(${dentistpatient})` }}
+      >
+        <div className="absolute inset-0 bg-black/40"></div>
         <motion.h1
-  initial={{ opacity: 0, x: -40 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8 }}
-  className="relative text-4xl sm:text-5xl md:text-7xl font-bold z-10 text-left"
->
-  General Dentistry
-</motion.h1>
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold z-10 text-left leading-tight"
+        >
+          General Dentistry
+        </motion.h1>
       </section>
 
-      {/* Intro Section */}
-      <div className="max-w-5xl mx-auto bg-blue-900 mt-10 rounded-2xl shadow-lg p-6 md:p-10">
-        <p className="text-gray-100 text-base md:text-lg leading-relaxed text-justify">
-          Regular check ups are an integral part of any dental routine. In order to keep on top of your dental health, we require regular professional assessments of your mouth. We recommend that you attend at least once annually however, should you need more regular check ups, this can be arranged.
-        </p>
+      {/* Intro Section - Mobile Optimized */}
+      <div className="max-w-5xl mx-auto mt-6 sm:mt-8 md:mt-10 px-4">
+        <div className="bg-blue-900 rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10">
+          <p className="text-gray-100 text-sm sm:text-base md:text-lg leading-relaxed text-justify">
+            Regular check ups are an integral part of any dental routine. In order to keep on top of your dental health, we require regular professional assessments of your mouth. We recommend that you attend at least once annually however, should you need more regular check ups, this can be arranged.
+          </p>
+        </div>
       </div>
 
-      {/* Services Grid */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-[#00072D]">
+      {/* Services Grid - Mobile Optimized */}
+      <section className="py-8 sm:py-12 md:py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-3 sm:px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 sm:mb-8 md:mb-10 text-[#00072D] px-2">
             Our Dental Services
           </h2>
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-blue-100 w-[90%] sm:w-[45%] md:w-[30%] lg:w-[22%] rounded-2xl shadow-lg hover:shadow-xl transition-transform transform hover:scale-105 overflow-hidden"
+                className="bg-blue-100 rounded-xl sm:rounded-2xl shadow-md hover:shadow-xl transition-all transform hover:scale-105 overflow-hidden"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                <div className="relative w-full h-48 overflow-hidden">
+                <div className="relative w-full h-32 sm:h-40 md:h-44 lg:h-48 overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -106,9 +106,10 @@ You can trust in us to handle your dental history carefully, ensuring your denta
                     className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'}`}
                   />
                 </div>
-                <div className="p-4 text-center">
-                  <button className="w-full bg-[#00072D] text-white py-3 rounded-lg font-semibold hover:bg-[#00124a] transition-colors">
-                    {service.title} <br /> {service.price}
+                <div className="p-2 sm:p-3 md:p-4 text-center">
+                  <button className="w-full bg-[#00072D] text-white py-2 sm:py-2.5 md:py-3 rounded-lg text-xs sm:text-sm md:text-base font-semibold hover:bg-[#00124a] transition-colors leading-tight">
+                    {service.title} <br /> 
+                    <span className="text-xs sm:text-sm md:text-base">{service.price}</span>
                   </button>
                 </div>
               </div>
@@ -117,29 +118,35 @@ You can trust in us to handle your dental history carefully, ensuring your denta
         </div>
       </section>
 
-      {/* Info Tabs Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {tabs.map((tab, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTab(index)}
-                className={`px-5 py-2.5 rounded-full font-semibold text-sm sm:text-base transition-all ${
-                  activeTab === index
-                    ? 'bg-gray-600 text-white shadow-md'
-                    : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-300'
-                }`}
-              >
-                {tab.title}
-              </button>
-            ))}
+      {/* Info Tabs Section - Mobile Optimized */}
+      <section className="py-8 sm:py-12 md:py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-3 sm:px-4">
+          {/* Tabs - Scrollable on Mobile */}
+          <div className="mb-6 sm:mb-8 md:mb-10 overflow-x-auto pb-2 -mx-3 px-3 sm:mx-0 sm:px-0">
+            <div className="flex gap-2 sm:gap-3 min-w-max sm:min-w-0 sm:flex-wrap sm:justify-center">
+              {tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveTab(index)}
+                  className={`px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm md:text-base transition-all whitespace-nowrap ${
+                    activeTab === index
+                      ? 'bg-gray-600 text-white shadow-md'
+                      : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-300'
+                  }`}
+                >
+                  {tab.title}
+                </button>
+              ))}
+            </div>
           </div>
 
-          <div className="bg-blue-100 rounded-2xl shadow-lg p-6 md:p-10 max-w-5xl mx-auto text-gray-700 text-base md:text-lg leading-relaxed space-y-5">
-            {tabs[activeTab].content.split('\n\n').map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
+          {/* Tab Content - Mobile Optimized */}
+          <div className="bg-blue-100 rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-8 lg:p-10 max-w-5xl mx-auto">
+            <div className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed space-y-3 sm:space-y-4 md:space-y-5">
+              {tabs[activeTab].content.split('\n\n').map((paragraph, i) => (
+                <p key={i} className="text-justify">{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
